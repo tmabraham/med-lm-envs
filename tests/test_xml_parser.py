@@ -1,6 +1,6 @@
 import pytest
 
-from medarc_verifiers.parsers import XMLParser
+from REDACTEDED_verifiers.parsers import XMLParser
 
 
 def test_parse_messages_returns_last_with_tags() -> None:

@@ -3,8 +3,8 @@
 One-off helper to:
   - load the MMLU-Pro dev split and grab the five health examples
   - show their original (list-based) option format
-  - load mkieffer/MMLU-Pro-Health validation examples for comparison
-  - convert the MMLU-Pro examples into the dict-based option format used by mkieffer/MMLU-Pro-Health
+  - load REDACTED/MMLU-Pro-Health validation examples for comparison
+  - convert the MMLU-Pro examples into the dict-based option format used by REDACTED/MMLU-Pro-Health
 
 The script prints the before/after records so you can verify the mapping.
 """
@@ -25,7 +25,7 @@ disable_progress_bar()
 
 
 DATASET_MMLU_PRO = "TIGER-Lab/MMLU-Pro"
-DATASET_HEALTH = "mkieffer/MMLU-Pro-Health"
+DATASET_HEALTH = "REDACTED/MMLU-Pro-Health"
 
 
 def _first_available_split(dataset: str, candidates: Iterable[str]):
@@ -134,9 +134,9 @@ def main():
     health_rows = _filter_health(mmlu_dev)
     health_rows = health_rows[:5]  # only keep the first five
 
-    # Load mkieffer/MMLU-Pro-Health validation few-shot examples
-    _, mkieffer_val = _first_available_split(DATASET_HEALTH, ["validation"])
-    mkieffer_preview = [mkieffer_val[i] for i in range(min(5, len(mkieffer_val)))]
+    # Load REDACTED/MMLU-Pro-Health validation few-shot examples
+    _, REDACTED_val = _first_available_split(DATASET_HEALTH, ["validation"])
+    REDACTED_preview = [REDACTED_val[i] for i in range(min(5, len(REDACTED_val)))]
 
     # Show the raw originals
     _print_section(
@@ -153,7 +153,7 @@ def main():
         ],
     )
 
-    # Show the mkieffer format for reference
+    # Show the REDACTED format for reference
     _print_section(
         f"{DATASET_HEALTH} validation preview (dict-based options)",
         [
@@ -163,7 +163,7 @@ def main():
                 "answer": r.get("answer"),
                 "cot_content": r.get("cot_content", None),
             }
-            for r in mkieffer_preview
+            for r in REDACTED_preview
         ],
     )
 

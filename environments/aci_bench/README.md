@@ -7,7 +7,7 @@
 
 ### Datasets
 - **Primary dataset**: `ACI-Bench`
-- **Source links**: [Paper](https://www.nature.com/articles/s41597-023-02487-3), [Github](https://github.com/wyim/aci-bench), [HF Dataset](https://huggingface.co/datasets/mkieffer/ACI-Bench-MedARC)
+- **Source links**: [Paper](https://www.nature.com/articles/s41597-023-02487-3), [Github](https://github.com/wyim/aci-bench), [HF Dataset](https://huggingface.co/datasets/REDACTED/ACI-Bench-REDACTED)
 - **Split sizes**: 
 
 | subset     | transcript_version | train | valid | test1 | test2 | test3 | Total |

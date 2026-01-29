@@ -14,19 +14,19 @@ from pydantic import BaseModel, field_validator
 from verifiers.types import GenerateOutputs
 from verifiers.utils.eval_utils import run_evaluation
 
-from medarc_verifiers.cli.utils.reporting import compute_average, compute_metric_averages
-from medarc_verifiers.cli._eval_builder import build_client_config, build_eval_config
-from medarc_verifiers.cli._job_builder import ResolvedJob
-from medarc_verifiers.cli._manifest import RunManifest
-from medarc_verifiers.cli._schemas import ModelConfigSchema
-from medarc_verifiers.cli.utils.endpoint_utils import (
+from REDACTED_verifiers.cli.utils.reporting import compute_average, compute_metric_averages
+from REDACTED_verifiers.cli._eval_builder import build_client_config, build_eval_config
+from REDACTED_verifiers.cli._job_builder import ResolvedJob
+from REDACTED_verifiers.cli._manifest import RunManifest
+from REDACTED_verifiers.cli._schemas import ModelConfigSchema
+from REDACTED_verifiers.cli.utils.endpoint_utils import (
     EndpointRegistry,
     EndpointRegistryCache,
     EnvMetadataCache,
     load_endpoint_registry,
     load_env_metadata,
 )
-from medarc_verifiers.cli.utils.shared import DEFAULT_BATCH_MAX_CONCURRENT, ensure_root_logging, resolve_env_identifier
+from REDACTED_verifiers.cli.utils.shared import DEFAULT_BATCH_MAX_CONCURRENT, ensure_root_logging, resolve_env_identifier
 
 try:
     from rich import print as rich_print  # type: ignore

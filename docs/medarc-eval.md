@@ -1,23 +1,23 @@
-# medarc-eval
+# REDACTED-eval
 
-`medarc-eval` is a command-line tool for evaluating language models on medical benchmarks. It handles the full pipeline: running benchmarks, processing results, and computing model comparisons.
+`REDACTED-eval` is a command-line tool for evaluating language models on medical benchmarks. It handles the full pipeline: running benchmarks, processing results, and computing model comparisons.
 
-> **Note:** `medarc-eval <ENV>` and `medarc-eval bench` are wrappers around the [verifiers](https://github.com/primeintellect-ai/verifiers) `vf-eval` command, adding medical-specific environments, batch orchestration, and environment-specific CLI flags inferred from each benchmark's `load_environment()` signature.
+> **Note:** `REDACTED-eval <ENV>` and `REDACTED-eval bench` are wrappers around the [verifiers](https://github.com/primeintellect-ai/verifiers) `vf-eval` command, adding medical-specific environments, batch orchestration, and environment-specific CLI flags inferred from each benchmark's `load_environment()` signature.
 
 ## Quick Start
 
 ```bash
 # Run a single benchmark (fastest way to test a model)
-medarc-eval medqa -m gpt-4.1-mini -n 25
+REDACTED-eval medqa -m gpt-4.1-mini -n 25
 
 # Run a batch of benchmarks from a config file
-medarc-eval bench --config configs/job-gpt-oss-20b.yaml
+REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml
 
 # Process raw results into analysis-ready parquet files
-medarc-eval process
+REDACTED-eval process
 
 # Compute win rates across models
-medarc-eval winrate
+REDACTED-eval winrate
 ```
 
 ## Typical Workflow
@@ -34,77 +34,77 @@ medarc-eval winrate
 
 | Command | Purpose |
 |---------|---------|
-| `medarc-eval <ENV>` | Run a single benchmark interactively |
-| `medarc-eval bench` | Run multiple benchmarks from a config file |
-| `medarc-eval process` | Convert raw results to parquet for analysis |
-| `medarc-eval winrate` | Compute model comparisons from processed data |
+| `REDACTED-eval <ENV>` | Run a single benchmark interactively |
+| `REDACTED-eval bench` | Run multiple benchmarks from a config file |
+| `REDACTED-eval process` | Convert raw results to parquet for analysis |
+| `REDACTED-eval winrate` | Compute model comparisons from processed data |
 
 ## Command Structure
 
 ```bash
 # Single-run mode: environment name comes FIRST
-medarc-eval medqa -m gpt-4.1-mini -n 50
+REDACTED-eval medqa -m gpt-4.1-mini -n 50
 
 # Subcommands: keyword comes first
-medarc-eval bench --config configs/my-run.yaml
-medarc-eval process --runs-dir runs/raw
-medarc-eval winrate --processed-dir runs/processed
+REDACTED-eval bench --config configs/my-run.yaml
+REDACTED-eval process --runs-dir runs/raw
+REDACTED-eval winrate --processed-dir runs/processed
 ```
 
 > **Important:** In single-run mode, the environment name must be the first argument.
-> `medarc-eval --verbose medqa` will fail; use `medarc-eval medqa --verbose` instead.
+> `REDACTED-eval --verbose medqa` will fail; use `REDACTED-eval medqa --verbose` instead.
 
 ## When to Use Each Mode
 
-### Single-Run Mode (`medarc-eval <ENV>`)
+### Single-Run Mode (`REDACTED-eval <ENV>`)
 
 **Best for:** Quick tests, debugging, exploring a benchmark's behavior.
 
 ```bash
 # Test GPT-4.1-mini on 25 MedQA questions
-medarc-eval medqa -m gpt-4.1-mini -n 25
+REDACTED-eval medqa -m gpt-4.1-mini -n 25
 
 # See what options are available for an environment
-medarc-eval longhealth --help
+REDACTED-eval longhealth --help
 ```
 
-### Batch Mode (`medarc-eval bench`)
+### Batch Mode (`REDACTED-eval bench`)
 
 **Best for:** Systematic evaluation across multiple models and benchmarks.
 
 ```bash
 # Run all jobs defined in config
-medarc-eval bench --config configs/job-gpt-oss-20b.yaml
+REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml
 
 # Preview what would run without executing
-medarc-eval bench --config configs/job-gpt-oss-20b.yaml --dry-run
+REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml --dry-run
 
 # Force all jobs to use a specific API endpoint
-medarc-eval bench --config configs/job-gpt-oss-20b.yaml --api-base-url http://127.0.0.1:8000/v1
+REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml --api-base-url http://127.0.0.1:8000/v1
 ```
 
-### Processing Mode (`medarc-eval process`)
+### Processing Mode (`REDACTED-eval process`)
 
 **Best for:** Preparing results for analysis after batch runs complete.
 
 ```bash
 # Process all completed runs
-medarc-eval process
+REDACTED-eval process
 
 # Process specific directory
-medarc-eval process --runs-dir runs/raw --output-dir runs/processed
+REDACTED-eval process --runs-dir runs/raw --output-dir runs/processed
 ```
 
-### Win Rate Mode (`medarc-eval winrate`)
+### Win Rate Mode (`REDACTED-eval winrate`)
 
 **Best for:** Comparing model performance across benchmarks.
 
 ```bash
 # Compute win rates from processed results
-medarc-eval winrate
+REDACTED-eval winrate
 
 # List available models before computing
-medarc-eval winrate --list-models
+REDACTED-eval winrate --list-models
 ```
 
 ## Output Directory Structure
@@ -128,11 +128,11 @@ runs/
 ## Getting Help
 
 ```bash
-medarc-eval --help              # General usage
-medarc-eval bench --help        # Batch mode options
-medarc-eval process --help      # Processing options
-medarc-eval winrate --help      # Win rate options
-medarc-eval medqa --help        # Environment-specific options
+REDACTED-eval --help              # General usage
+REDACTED-eval bench --help        # Batch mode options
+REDACTED-eval process --help      # Processing options
+REDACTED-eval winrate --help      # Win rate options
+REDACTED-eval medqa --help        # Environment-specific options
 ```
 
 ## Installing Environments
@@ -165,7 +165,7 @@ prime env install owner/environment-name@0.1.3
 
 ## Detailed Documentation
 
-- [Single-Run Mode](medarc-eval-single-run.md) - Run individual benchmarks with custom options
-- [Batch Mode](medarc-eval-bench.md) - Configure and run systematic evaluations
-- [Processing](medarc-eval-process.md) - Prepare results for analysis
-- [Win Rates](medarc-eval-winrate.md) - Compare models across benchmarks
+- [Single-Run Mode](REDACTED-eval-single-run.md) - Run individual benchmarks with custom options
+- [Batch Mode](REDACTED-eval-bench.md) - Configure and run systematic evaluations
+- [Processing](REDACTED-eval-process.md) - Prepare results for analysis
+- [Win Rates](REDACTED-eval-winrate.md) - Compare models across benchmarks

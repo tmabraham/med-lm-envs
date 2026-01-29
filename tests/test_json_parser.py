@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from medarc_verifiers.parsers import JSONParser
+from REDACTED_verifiers.parsers import JSONParser
 
 
 def test_parse_extracts_canonical_fields() -> None:

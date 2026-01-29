@@ -41,7 +41,7 @@ Replace `OPENAI_API_KEY` with your actual API key.
 ### Authors
 This environment has been put together by:
 
-Ratna Sagari Grandhi - ([@sagarigrandhi](https://github.com/sagarigrandhi))
+REDACTED
 
 ### Credits 
 Dataset:

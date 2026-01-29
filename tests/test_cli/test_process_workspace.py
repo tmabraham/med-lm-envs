@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from medarc_verifiers.cli.hf import HFSyncConfig
-from medarc_verifiers.cli.process import workspace
+from REDACTED_verifiers.cli.hf import HFSyncConfig
+from REDACTED_verifiers.cli.process import workspace
 
 
 def _write_snapshot(snapshot_dir: Path, *, content: str = "remote") -> Path:

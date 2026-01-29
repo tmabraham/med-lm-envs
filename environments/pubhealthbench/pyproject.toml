@@ -7,7 +7,7 @@ requires-python = ">=3.11"
 dependencies = [
     "datasets>=4.0.0",
     "verifiers>=0.1.2.post0",
-    "medarc_verifiers>=0.1.0",
+    "REDACTED_verifiers>=0.1.0",
 ]
 
 [build-system]
@@ -18,7 +18,7 @@ build-backend = "hatchling.build"
 include = ["pubhealthbench.py"]
 
 [tool.uv.sources]
-medarc_verifiers = { git = "https://github.com/MedARC-AI/med-lm-envs" }
+REDACTED_verifiers = { git = "https://github.com/REDACTED/med-lm-envs" }
 
 [tool.prime.environment]
 loader = "pubhealthbench:load_environment"

@@ -1,9 +1,9 @@
 import verifiers as vf
 from datasets import Dataset, load_dataset
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.prompts import THINK_XML_SYSTEM_PROMPT, XML_SYSTEM_PROMPT, AnswerFormat
-from medarc_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
-from medarc_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
+from REDACTED_verifiers.prompts import THINK_XML_SYSTEM_PROMPT, XML_SYSTEM_PROMPT, AnswerFormat
+from REDACTED_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
+from REDACTED_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
 from verifiers.utils.data_utils import BOXED_SYSTEM_PROMPT, THINK_BOXED_SYSTEM_PROMPT, extract_boxed_answer
 
 disable_progress_bar()  # suppress datasets mapping progress bar
@@ -93,7 +93,7 @@ def load_environment(
     **kwargs,
 ) -> vf.Environment:
     """
-    Single-turn Medbullets environment using HuggingFace `mkieffer/Medbullets` dataset
+    Single-turn Medbullets environment using HuggingFace `REDACTED/Medbullets` dataset
 
     Each example is normalized to the fields expected by `vf.SingleTurnEnv`:
         {
@@ -113,10 +113,10 @@ def load_environment(
     # -------- load dataset --------
     if num_options == 4:
         # 4 options: {"A", "B", "C", "D"}
-        test_raw = load_dataset("mkieffer/Medbullets", split="op4_test")
+        test_raw = load_dataset("REDACTED/Medbullets", split="op4_test")
     elif num_options == 5:
         # 5 options: {"A", "B", "C", "D", "E"}
-        test_raw = load_dataset("mkieffer/Medbullets", split="op5_test")
+        test_raw = load_dataset("REDACTED/Medbullets", split="op5_test")
     else:
         raise ValueError("'num_options' must be 4 or 5")
 

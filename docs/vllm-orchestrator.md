@@ -1,6 +1,6 @@
 ## vLLM orchestrator (local Docker)
 
-This repo includes an experimental vLLM orchestrator for running `medarc-eval` against
+This repo includes an experimental vLLM orchestrator for running `REDACTED-eval` against
 locally hosted vLLM Docker containers with GPU/port scheduling.
 
 ### Requirements
@@ -34,13 +34,13 @@ Each job config must define exactly one model under `models:` and include a top-
 The `env_file` is a dotenv file that is loaded for every Docker launch. If unset and a repo-level `.env` exists,
 it is used automatically. You can also override it via `--env-file`.
 
-Optional: set `orchestrate.restart` to reuse completed jobs from a previous `medarc-eval` run (it is forwarded as
-`medarc-eval bench --restart ...`).
+Optional: set `orchestrate.restart` to reuse completed jobs from a previous `REDACTED-eval` run (it is forwarded as
+`REDACTED-eval bench --restart ...`).
 
 ### CLI usage
 
 ```bash
-uv run medarc-orchestrate --plan plans/local-vllm.yaml
+uv run REDACTED-orchestrate --plan plans/local-vllm.yaml
 ```
 
 Common flags:

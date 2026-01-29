@@ -164,7 +164,7 @@ r1: [35.58, 31.618, 28.316, 33.239, 38.249, 0.0, 33.915, 32.653, 33.741, 21.006]
 ### Authors
 This environment has been put together by:
 
-Nishant Mishra - ([mnishant2](https://github.com/mnishant2))
+REDACTED
 
 ### Citation
 

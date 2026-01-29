@@ -1,4 +1,4 @@
-"""Unified MedARC evaluation CLI."""
+"""Unified REDACTED evaluation CLI."""
 
 from __future__ import annotations
 
@@ -15,24 +15,24 @@ from rich.table import Table
 import yaml
 from pydantic import ValidationError
 
-from medarc_verifiers.cli._config_loader import ConfigFormatError, load_run_config
-from medarc_verifiers.cli._job_builder import ResolvedJob, build_jobs
-from medarc_verifiers.cli._job_executor import ExecutorSettings, JobExecutionResult, execute_jobs
-from medarc_verifiers.cli._manifest import ManifestJobEntry, RunManifest, compute_snapshot_checksum
-from medarc_verifiers.cli._manifest_planner import ManifestPlanner
-from medarc_verifiers.cli._single_run import run_single_mode
-from medarc_verifiers.cli.process import ProcessOptions, ProcessResult, run_process
-from medarc_verifiers.cli.hf import HFSyncConfig, sync_files_to_hub
-from medarc_verifiers.cli.winrate import WinrateConfig
-from medarc_verifiers.cli.winrate import (
+from REDACTED_verifiers.cli._config_loader import ConfigFormatError, load_run_config
+from REDACTED_verifiers.cli._job_builder import ResolvedJob, build_jobs
+from REDACTED_verifiers.cli._job_executor import ExecutorSettings, JobExecutionResult, execute_jobs
+from REDACTED_verifiers.cli._manifest import ManifestJobEntry, RunManifest, compute_snapshot_checksum
+from REDACTED_verifiers.cli._manifest_planner import ManifestPlanner
+from REDACTED_verifiers.cli._single_run import run_single_mode
+from REDACTED_verifiers.cli.process import ProcessOptions, ProcessResult, run_process
+from REDACTED_verifiers.cli.hf import HFSyncConfig, sync_files_to_hub
+from REDACTED_verifiers.cli.winrate import WinrateConfig
+from REDACTED_verifiers.cli.winrate import (
     _resolve_source,
     list_models,
     print_winrate_summary_markdown,
     run_winrate,
 )
-from medarc_verifiers.cli.utils.overrides import build_cli_override
-from medarc_verifiers.cli._schemas import EnvironmentConfigSchema, EnvironmentExportConfig
-from medarc_verifiers.cli._constants import (
+from REDACTED_verifiers.cli.utils.overrides import build_cli_override
+from REDACTED_verifiers.cli._schemas import EnvironmentConfigSchema, EnvironmentExportConfig
+from REDACTED_verifiers.cli._constants import (
     BENCH_COMMAND,
     COMMAND,
     DEFAULT_API_BASE_URL,
@@ -54,7 +54,7 @@ def build_batch_parser() -> argparse.ArgumentParser:
     """Construct the unified CLI parser."""
     parser = argparse.ArgumentParser(
         prog=COMMAND,
-        description="Run MedARC evaluations using unified configuration files.",
+        description="Run REDACTED evaluations using unified configuration files.",
     )
     parser.add_argument("-c", "--config", required=True, type=Path, help="Path to a run configuration YAML file.")
     parser.add_argument("--run-id", help="Override the generated run identifier.")
@@ -190,7 +190,7 @@ def build_batch_parser() -> argparse.ArgumentParser:
 def build_process_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog=f"{COMMAND} {PROCESS_COMMAND}",
-        description="Process MedARC run outputs into Parquet datasets and optional HF uploads.",
+        description="Process REDACTED run outputs into Parquet datasets and optional HF uploads.",
     )
     parser.add_argument(
         "-c",
@@ -837,7 +837,7 @@ def _upload_winrate_outputs(
             logger.warning("Winrate output %s is outside output_dir %s; skipping upload.", path, output_dir)
             return
         files.append(rel_path)
-    message = f"Update {len(files)} winrate file(s) from medarc-eval winrate"
+    message = f"Update {len(files)} winrate file(s) from REDACTED-eval winrate"
     sync_files_to_hub(
         repo_id=repo_id,
         output_dir=output_dir,
@@ -924,7 +924,7 @@ def _execute_batch(args: argparse.Namespace) -> int:
     if getattr(args, "include_usage", None) is not None:
         import os
 
-        os.environ["MEDARC_INCLUDE_USAGE"] = "true" if args.include_usage else "false"
+        os.environ["REDACTED_INCLUDE_USAGE"] = "true" if args.include_usage else "false"
 
     config_path = Path(args.config).expanduser()
     env_root_override = Path(args.env_config_root).expanduser().resolve() if args.env_config_root else None
@@ -936,12 +936,12 @@ def _execute_batch(args: argparse.Namespace) -> int:
     run_id = args.run_id  # May be None when using --auto-resume discovery
 
     if args.enable_additional_retries:
-        from medarc_verifiers.utils.retry import patch_verifiers_model_response_retry
+        from REDACTED_verifiers.utils.retry import patch_verifiers_model_response_retry
         from datetime import datetime
 
         cwd = Path.cwd()
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        retry_log_path = cwd / "logs" / f"medarc_model_retry_{ts}.log"
+        retry_log_path = cwd / "logs" / f"REDACTED_model_retry_{ts}.log"
         patch_verifiers_model_response_retry(log_path=retry_log_path)
 
     jobs = build_jobs(run_config)

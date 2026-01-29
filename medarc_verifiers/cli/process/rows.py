@@ -7,7 +7,7 @@ import logging
 from pathlib import Path
 from typing import Any, Mapping, MutableMapping, Sequence
 
-from medarc_verifiers.cli.process.metadata import NormalizedMetadata
+from REDACTED_verifiers.cli.process.metadata import NormalizedMetadata
 
 logger = logging.getLogger(__name__)
 

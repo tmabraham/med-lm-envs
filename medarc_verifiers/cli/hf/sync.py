@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Sequence
 
 if TYPE_CHECKING:
-    from medarc_verifiers.cli.process.writer import EnvWriteSummary
+    from REDACTED_verifiers.cli.process.writer import EnvWriteSummary
 
 logger = logging.getLogger(__name__)
 
@@ -161,7 +161,7 @@ def sync_to_hub(
         files=files,
     )
 
-    message = f"Update {summary.total_files} file(s) from medarc-eval process"
+    message = f"Update {summary.total_files} file(s) from REDACTED-eval process"
     sync_files_to_hub(
         repo_id=config.repo_id,
         output_dir=output_dir,

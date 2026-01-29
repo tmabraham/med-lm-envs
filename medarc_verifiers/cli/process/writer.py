@@ -15,11 +15,11 @@ import polars as pl
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from medarc_verifiers.cli.process.aggregate import AggregatedEnvRows
+from REDACTED_verifiers.cli.process.aggregate import AggregatedEnvRows
 
 logger = logging.getLogger(__name__)
 
-EXPORTER_METADATA_KEY = b"medarc_exporter"
+EXPORTER_METADATA_KEY = b"REDACTED_exporter"
 DEFAULT_SCHEMA_VERSION = 1
 ALLOWED_COLUMNS: tuple[str, ...] = (
     "env_id",
@@ -140,7 +140,7 @@ def write_hf_dataset_config(
     dataset_info = {
         "builder_name": "parquet",
         "config_name": "default",
-        "config_description": "MedARC processed outputs grouped by model and environment.",
+        "config_description": "REDACTED processed outputs grouped by model and environment.",
         "dataset_size": None,
         "download_checksums": None,
         "download_size": None,

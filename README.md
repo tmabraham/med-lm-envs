@@ -1,8 +1,8 @@
-# MedARC Medical Language Model Environments
+# REDACTED Medical Language Model Environments
 
-This repository is used to build verifiers environments and tools for the MedARC medical language model project.
+This repository is used to build verifiers environments and tools for the REDACTED medical language model project.
 
-It also contains the medarc-verifiers package, which provides additional tools for creating verifiers environments.
+It also contains the REDACTED-verifiers package, which provides additional tools for creating verifiers environments.
 
 ## Getting Started with Verifiers Environments
 
@@ -85,11 +85,11 @@ During development you can iterate quickly by tweaking prompts, parser logic, or
 
 After running with `-s`, inspect saved runs with `vf-tui`, which provides a terminal UI for browsing prompts, completions, and rewards under the generated `outputs/evals` folders.
 
-## Using an Existing MedARC Environment
+## Using an Existing REDACTED Environment
 
-Once your tooling is set up you can install MedARC-maintained environments directly from the Prime Environments Hub (for example [`medarc/medcasereasoning`](https://app.primeintellect.ai/dashboard/environments/medarc/medcasereasoning) or [`medarc/metamedqa`](https://app.primeintellect.ai/dashboard/environments/medarc/metamedqa)).
+Once your tooling is set up you can install REDACTED-maintained environments directly from the Prime Environments Hub (for example [`REDACTED/medcasereasoning`](https://app.primeintellect.ai/dashboard/environments/REDACTED/medcasereasoning) or [`REDACTED/metamedqa`](https://app.primeintellect.ai/dashboard/environments/REDACTED/metamedqa)).
 
-- **Install from the Hub.** Run `prime env install medarc/medcasereasoning` to pull the latest published version (add `@version` to pin a release).
+- **Install from the Hub.** Run `prime env install REDACTED/medcasereasoning` to pull the latest published version (add `@version` to pin a release).
 - **Run an evaluation.** Execute `vf-eval medcasereasoning -m gpt-4.1-mini -n 10 -s` to generate a small batch of rollouts.
 - **Load programmatically.** Environments installed via the Hub are importable like any other Verifiers module:
 
@@ -100,29 +100,29 @@ Once your tooling is set up you can install MedARC-maintained environments direc
   results = env.evaluate(model_client, "gpt-4.1-mini", num_examples=5)
   ```
 
-## medarc-eval CLI
+## REDACTED-eval CLI
 
-`medarc-eval` wraps the upstream `vf-eval` flow, adding environment-specific flags and batch orchestration. See [full documentation](docs/medarc-eval.md).
+`REDACTED-eval` wraps the upstream `vf-eval` flow, adding environment-specific flags and batch orchestration. See [full documentation](docs/REDACTED-eval.md).
 
 | Command | Description |
 |---------|-------------|
-| [`medarc-eval <ENV>`](docs/medarc-eval-single-run.md) | Run a single benchmark with auto-discovered environment flags |
-| [`medarc-eval bench`](docs/medarc-eval-bench.md) | Run multiple benchmarks from a YAML config with resume support |
-| [`medarc-eval process`](docs/medarc-eval-process.md) | Convert raw outputs to parquet for analysis |
-| [`medarc-eval winrate`](docs/medarc-eval-winrate.md) | Compute HELM-style win rates across models |
+| [`REDACTED-eval <ENV>`](docs/REDACTED-eval-single-run.md) | Run a single benchmark with auto-discovered environment flags |
+| [`REDACTED-eval bench`](docs/REDACTED-eval-bench.md) | Run multiple benchmarks from a YAML config with resume support |
+| [`REDACTED-eval process`](docs/REDACTED-eval-process.md) | Convert raw outputs to parquet for analysis |
+| [`REDACTED-eval winrate`](docs/REDACTED-eval-winrate.md) | Compute HELM-style win rates across models |
 
 ### Quick Start
 
 ```bash
 # Run a single benchmark
-uv run medarc-eval medqa -m gpt-4.1-mini -n 25
+uv run REDACTED-eval medqa -m gpt-4.1-mini -n 25
 
 # Run batch evaluations from config
-uv run medarc-eval bench --config configs/job-gpt-oss-20b.yaml
+uv run REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml
 
 # Process results and compute win rates
-uv run medarc-eval process
-uv run medarc-eval winrate
+uv run REDACTED-eval process
+uv run REDACTED-eval winrate
 ```
 
 ### Environment-Specific Flags
@@ -131,21 +131,21 @@ Each environment's `load_environment()` parameters become CLI flags automaticall
 
 ```bash
 # Discover available flags
-uv run medarc-eval longhealth --help
+uv run REDACTED-eval longhealth --help
 
 # Use environment-specific options
-uv run medarc-eval longhealth --task task1 --shuffle-answers -m gpt-4.1-mini -n 10
+uv run REDACTED-eval longhealth --task task1 --shuffle-answers -m gpt-4.1-mini -n 10
 ```
 
 For complex arguments (dicts, nested structures), use `--env-args`:
 
 ```bash
-uv run medarc-eval careqa --env-args '{"split": "open", "judge_model": "gpt-4o"}'
+uv run REDACTED-eval careqa --env-args '{"split": "open", "judge_model": "gpt-4o"}'
 ```
 
 ## Batch Evaluations
 
-Use `medarc-eval bench` to run multiple model × environment evaluations from a config file. See [full batch mode documentation](docs/medarc-eval-bench.md).
+Use `REDACTED-eval bench` to run multiple model × environment evaluations from a config file. See [full batch mode documentation](docs/REDACTED-eval-bench.md).
 
 ```yaml
 name: gpt-oss-20b-med
@@ -165,13 +165,13 @@ jobs:
 
 ```bash
 # Run the batch
-uv run medarc-eval bench --config configs/job-gpt-oss-20b.yaml
+uv run REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml
 
 # Preview without executing
-uv run medarc-eval bench --config configs/job-gpt-oss-20b.yaml --dry-run
+uv run REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml --dry-run
 ```
 
-Batch mode supports automatic resume, job manifests, and matrix sweeps for parameter grids. See the [batch mode documentation](docs/medarc-eval-bench.md) for config file format, resume/restart options, and advanced features.
+Batch mode supports automatic resume, job manifests, and matrix sweeps for parameter grids. See the [batch mode documentation](docs/REDACTED-eval-bench.md) for config file format, resume/restart options, and advanced features.
 
 ### Matrix Sweeps
 
@@ -189,7 +189,7 @@ Environment configs support matrix expansion for parameter grid runs:
   matrix_id_format: "{base}-{difficulty}-s{shuffle_seed}"
 ```
 
-This expands into six variants (`medconceptsqa-base-easy-s1618`, …). See [batch mode docs](docs/medarc-eval-bench.md) for full details on matrix expansion, exclusions, and split config files.
+This expands into six variants (`medconceptsqa-base-easy-s1618`, …). See [batch mode docs](docs/REDACTED-eval-bench.md) for full details on matrix expansion, exclusions, and split config files.
 
 ## Processing and Win Rates
 
@@ -197,10 +197,10 @@ After running benchmarks, convert results to parquet and compute model compariso
 
 ```bash
 # Process raw outputs to parquet
-uv run medarc-eval process
+uv run REDACTED-eval process
 
 # Compute HELM-style win rates
-uv run medarc-eval winrate
+uv run REDACTED-eval winrate
 ```
 
-See [processing documentation](docs/medarc-eval-process.md) and [win rate documentation](docs/medarc-eval-winrate.md) for configuration options, HuggingFace integration, and output formats.
+See [processing documentation](docs/REDACTED-eval-process.md) and [win rate documentation](docs/REDACTED-eval-winrate.md) for configuration options, HuggingFace integration, and output formats.

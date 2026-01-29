@@ -12,10 +12,10 @@ from typing import Any, Mapping, Sequence
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from medarc_verifiers.cli._job_builder import ResolvedJob
-from medarc_verifiers.cli._schemas import ModelConfigSchema
-from medarc_verifiers.cli.utils.shared import compute_checksum, resolve_env_identifier_or
-from medarc_verifiers.utils.pathing import project_root, to_project_relative
+from REDACTED_verifiers.cli._job_builder import ResolvedJob
+from REDACTED_verifiers.cli._schemas import ModelConfigSchema
+from REDACTED_verifiers.cli.utils.shared import compute_checksum, resolve_env_identifier_or
+from REDACTED_verifiers.utils.pathing import project_root, to_project_relative
 
 MANIFEST_FILENAME = "run_manifest.json"
 PROJECT_ROOT = project_root()

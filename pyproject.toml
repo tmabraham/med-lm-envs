@@ -1,7 +1,7 @@
 [project]
-name = "medarc-verifiers"
+name = "REDACTED-verifiers"
 version = "0.1.0"
-description = "A collection of MedARC utilites for the verifiers package"
+description = "A collection of REDACTED utilites for the verifiers package"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
@@ -20,8 +20,8 @@ dependencies = [
 ]
 
 [project.scripts]
-medarc-eval = "medarc_verifiers.cli.main:main"
-medarc-orchestrate = "medarc_verifiers.orchestrate.cli:main"
+REDACTED-eval = "REDACTED_verifiers.cli.main:main"
+REDACTED-orchestrate = "REDACTED_verifiers.orchestrate.cli:main"
 
 [dependency-groups]
 dev = [
@@ -42,12 +42,12 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 120
 extend-exclude = ["docs"]
-src = ["medarc_verifiers"]
+src = ["REDACTED_verifiers"]
 
 [build-system]
 requires = ["uv_build>=0.9.0,<0.10.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = "medarc_verifiers"
+module-name = "REDACTED_verifiers"
 module-root = ""

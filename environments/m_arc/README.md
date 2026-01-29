@@ -7,7 +7,7 @@
 
 ### Datasets
 - **Primary dataset**: `M-ARC`
-- **Source links**: [Paper](https://arxiv.org/pdf/2502.04381), [Github](https://github.com/dbernardo05/medARC-QA), [HF Dataset](https://huggingface.co/datasets/mkieffer/M-ARC)
+- **Source links**: [Paper](https://arxiv.org/pdf/2502.04381), [Github](https://github.com/dbernardo05/REDACTED-QA), [HF Dataset](https://huggingface.co/datasets/REDACTED/M-ARC)
 - **Split sizes**: 
 
     | Split       | Choices         | Count   |
@@ -45,7 +45,7 @@ uv run vf-eval m-arc \
 
 Notes:
 - Use `-a` / `--env-args` to pass environment-specific configuration as a JSON object.
-- The official M-ARC [eval code](https://github.com/dbernardo05/medARC-QA/blob/main/evaluate_from_api.py#L253) loads the entire MMLU-Pro `validation` split to use as few-shot examples. Here, however, we only use rows from the health category, in line with how the official MMLU-Pro [eval code](https://github.com/TIGER-AI-Lab/MMLU-Pro/blob/main/evaluate_from_api.py#L225) filters by category.
+- The official M-ARC [eval code](https://github.com/dbernardo05/REDACTED-QA/blob/main/evaluate_from_api.py#L253) loads the entire MMLU-Pro `validation` split to use as few-shot examples. Here, however, we only use rows from the health category, in line with how the official MMLU-Pro [eval code](https://github.com/TIGER-AI-Lab/MMLU-Pro/blob/main/evaluate_from_api.py#L225) filters by category.
 - Setting `use_think` to `True` works best with `num_few_shot` of at least `1`, so that the LLM can learn exactly how it should format its answer.
 
 

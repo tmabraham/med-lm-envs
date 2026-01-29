@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-COMMAND = "medarc-eval"
+COMMAND = "REDACTED-eval"
 BENCH_COMMAND = "bench"
 PROCESS_COMMAND = "process"
 WINRATE_COMMAND = "winrate"

@@ -5,12 +5,12 @@ import pandas as pd
 import verifiers as vf
 from datasets import Dataset, load_from_disk
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.parsers import JSONParser
-from medarc_verifiers.utils import (
+from REDACTED_verifiers.parsers import JSONParser
+from REDACTED_verifiers.utils import (
     default_judge_api_key,
     download_file,
     judge_sampling_args_and_headers,
-    medarc_cache_dir,
+    REDACTED_cache_dir,
 )
 from openai import AsyncOpenAI
 from verifiers.types import Info, Messages, State
@@ -31,7 +31,7 @@ JUDGE_DIMENSIONS = ["accuracy", "completeness", "clarity"]
 
 
 def _resolve_cache_dir(cache_dir: Path | str | None = None) -> Path:
-    resolved = medarc_cache_dir(cache_dir) / CACHE_SUBDIR
+    resolved = REDACTED_cache_dir(cache_dir) / CACHE_SUBDIR
     resolved.mkdir(parents=True, exist_ok=True)
     return resolved
 
@@ -132,8 +132,8 @@ def load_environment(
     from MedHELM / MedDialog (accuracy, completeness, clarity).
 
     Args:
-        cache_dir: Optional override for the cache location. Defaults to `MEDARC_CACHE_DIR/medicationqa`
-            (i.e., `~/.cache/medarc/medicationqa`).
+        cache_dir: Optional override for the cache location. Defaults to `REDACTED_CACHE_DIR/medicationqa`
+            (i.e., `~/.cache/REDACTED/medicationqa`).
         judge_model: Model identifier to use for the judge (e.g. "gpt-4o").
         judge_base_url: Optional base URL for a non-OpenAI-compatible endpoint (e.g. Ollama).
         judge_api_key: API key for the judge model. Defaults to `default_judge_api_key`, which

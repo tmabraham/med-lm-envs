@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from medarc_verifiers.cli._config_loader import load_run_config
-from medarc_verifiers.cli._job_builder import ResolvedJob, build_jobs
+from REDACTED_verifiers.cli._config_loader import load_run_config
+from REDACTED_verifiers.cli._job_builder import ResolvedJob, build_jobs
 
 
 def _write_yaml(path: Path, content: str) -> Path:
@@ -15,7 +15,7 @@ def _write_yaml(path: Path, content: str) -> Path:
 
 def _stub_metadata(monkeypatch) -> None:
     monkeypatch.setattr(
-        "medarc_verifiers.cli._config_loader.load_env_metadata",
+        "REDACTED_verifiers.cli._config_loader.load_env_metadata",
         lambda _env_id, cache=None: [],
     )
 

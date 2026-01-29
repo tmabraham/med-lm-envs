@@ -11,7 +11,7 @@ Evaluation environment for consumer health question summarization: condensing ve
 ---
 
 ### Dataset
-- **Source**: [medarc/MeQSum-patient-consumer-health-questions](https://huggingface.co/datasets/medarc/MeQSum-patient-consumer-health-questions)
+- **Source**: [REDACTED/MeQSum-patient-consumer-health-questions](https://huggingface.co/datasets/REDACTED/MeQSum-patient-consumer-health-questions)
 - **Based on**: MeQSum corpus from [Ben Abacha & Demner-Fushman, ACL 2019](https://aclanthology.org/P19-1215/) - "On the Summarization of Consumer Health Questions"
 - **Split sizes**:
   - **Train:** 1,000 examples
@@ -42,22 +42,22 @@ The implementation follows the pattern established in `medicationqa`, using mult
 
 **Basic evaluation with default settings:**
 ```bash
-python -m medarc_verifiers.cli.main meqsum -m gpt-4.1-mini -n 5 -r 1 --judge-model gpt-4.1-mini -s
+python -m REDACTED_verifiers.cli.main meqsum -m gpt-4.1-mini -n 5 -r 1 --judge-model gpt-4.1-mini -s
 ```
 
 **Run on validation split:**
 ```bash
-python -m medarc_verifiers.cli.main meqsum --split validation -m gpt-4.1-mini -n 10 -r 1 --judge-model gpt-4.1-mini -s
+python -m REDACTED_verifiers.cli.main meqsum --split validation -m gpt-4.1-mini -n 10 -r 1 --judge-model gpt-4.1-mini -s
 ```
 
 **Fast evaluation (without automatic metrics):**
 ```bash
-python -m medarc_verifiers.cli.main meqsum -m gpt-4.1-mini -n 10 -r 1 --judge-model gpt-4.1-mini --no-compute-auto-metrics -s
+python -m REDACTED_verifiers.cli.main meqsum -m gpt-4.1-mini -n 10 -r 1 --judge-model gpt-4.1-mini --no-compute-auto-metrics -s
 ```
 
 **Using a local model (e.g., Ollama):**
 ```bash
-python -m medarc_verifiers.cli.main meqsum \
+python -m REDACTED_verifiers.cli.main meqsum \
   -m llama3 \
   --api-base-url http://localhost:11434/v1 \
   --env-args '{"judge_model":"llama3","judge_base_url":"http://localhost:11434/v1","judge_api_key":"ollama"}' \

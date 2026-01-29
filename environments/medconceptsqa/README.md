@@ -43,4 +43,4 @@ Summarize key metrics your rubric emits and how they’re interpreted.
 ### Authors
 This environment has been put together by:
 
-Anish Mahishi - ([@macandro96](https://github.com/macandro96))
+REDACTED

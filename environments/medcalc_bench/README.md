@@ -18,7 +18,7 @@
 ### Task
 - **Type**: single-turn, multi-turn with tool use
 - **Prompt**: `_build_prompt(patient_note, question)` instructs `<think>...</think>` and `<answer>...</answer>`.
-- **Parser**: medarc_verifiers' `XMLParser` reads both `<think>` and `<answer>` tags.
+- **Parser**: REDACTED_verifiers' `XMLParser` reads both `<think>` and `<answer>` tags.
 - **Rubric**: `check_correctness` validates by calculator type:
   - IDs 13, 68: date equality (MM/DD/YYYY)
   - ID 69: tuple `(weeks, days)` equality
@@ -44,7 +44,7 @@ uv run vf-eval medcalc-bench \
 Notes:
 - Use `-a` / `--env-args` to pass environment-specific configuration as a JSON object.
 - Setting `use_think` to `True` works best with `one_shot` set to `True`, so that the LLM can learn exactly how it should format its answer.
-- The packaged `medarc_verifiers` XMLParser suppresses the upstream warning about `<think>` and still parses `<answer>` even if `<think>` is malformed.
+- The packaged `REDACTED_verifiers` XMLParser suppresses the upstream warning about `<think>` and still parses `<answer>` even if `<think>` is malformed.
 - **Tool safety**: The Python tool uses [`RestrictedPython`](https://restrictedpython.readthedocs.io/) for sandboxed execution with limited builtins (only `math`, `numpy`, `scipy` imports allowed). The calculator tool uses [`simpleeval`](https://github.com/danthedeckie/simpleeval) with only safe math operations.
 
 ### Environment Arguments

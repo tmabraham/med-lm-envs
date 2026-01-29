@@ -28,4 +28,4 @@ The evaluation environment is defined in `metamedqa.py` and uses the HuggingFace
 ## Authors
 This environment has been put together by:
 
-Aymane Ouraq - ([@aymaneo](https://github.com/aymaneo))
+REDACTED

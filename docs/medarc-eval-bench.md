@@ -8,13 +8,13 @@ Each job invokes the verifiers [`vf-eval`](https://github.com/primeintellect-ai/
 
 ```bash
 # Run all jobs from config
-medarc-eval bench --config configs/job-gpt-oss-20b.yaml
+REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml
 
 # Preview what would run
-medarc-eval bench --config configs/job-gpt-oss-20b.yaml --dry-run
+REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml --dry-run
 
 # Force all jobs to use a specific API endpoint
-medarc-eval bench --config configs/job-gpt-oss-20b.yaml --api-base-url http://127.0.0.1:8000/v1
+REDACTED-eval bench --config configs/job-gpt-oss-20b.yaml --api-base-url http://127.0.0.1:8000/v1
 ```
 
 ## Writing a Config File
@@ -74,7 +74,7 @@ models:
 Use `--api-base-url` to override `models.*.api_base_url` for all jobs at runtime:
 
 ```bash
-medarc-eval bench --config my-config.yaml --api-base-url http://127.0.0.1:8000/v1
+REDACTED-eval bench --config my-config.yaml --api-base-url http://127.0.0.1:8000/v1
 ```
 
 ### Environment Configuration
@@ -119,20 +119,20 @@ When you re-run the same config, completed jobs are skipped:
 
 ```bash
 # First run - runs all jobs
-medarc-eval bench --config my-config.yaml
+REDACTED-eval bench --config my-config.yaml
 
 # Interrupted, re-run - skips completed jobs
-medarc-eval bench --config my-config.yaml
+REDACTED-eval bench --config my-config.yaml
 ```
 
 ### Force Fresh Run
 
 ```bash
 # Disable auto-resume, create new run directory
-medarc-eval bench --config my-config.yaml --no-auto-resume
+REDACTED-eval bench --config my-config.yaml --no-auto-resume
 
 # Re-run everything, even completed jobs
-medarc-eval bench --config my-config.yaml --force
+REDACTED-eval bench --config my-config.yaml --force
 ```
 
 ### Restart from Previous Run
@@ -140,17 +140,17 @@ medarc-eval bench --config my-config.yaml --force
 Copy completed jobs from an old run to seed a new one:
 
 ```bash
-medarc-eval bench --config updated-config.yaml --restart old-run-id
+REDACTED-eval bench --config updated-config.yaml --restart old-run-id
 ```
 
 ### Re-run Specific Environments
 
 ```bash
 # Re-run only medqa jobs (keep other completed jobs)
-medarc-eval bench --config my-config.yaml --forced medqa
+REDACTED-eval bench --config my-config.yaml --forced medqa
 
 # Re-run multiple environments
-medarc-eval bench --config my-config.yaml --forced medqa,pubmedqa
+REDACTED-eval bench --config my-config.yaml --forced medqa,pubmedqa
 ```
 
 ## Common Flags
@@ -270,20 +270,20 @@ jobs:
 
 ```bash
 # Lower concurrency for rate-limited API
-medarc-eval bench --config my-config.yaml --max-concurrent 5
+REDACTED-eval bench --config my-config.yaml --max-concurrent 5
 
 # Change temperature for all jobs
-medarc-eval bench --config my-config.yaml --sampling-args '{"temperature": 0.5}'
+REDACTED-eval bench --config my-config.yaml --sampling-args '{"temperature": 0.5}'
 
 # Enable usage reporting for all jobs
-medarc-eval bench --config my-config.yaml --include-usage
+REDACTED-eval bench --config my-config.yaml --include-usage
 
 # Disable usage reporting (overrides auto-detection for Prime Inference)
-medarc-eval bench --config my-config.yaml --no-include-usage
+REDACTED-eval bench --config my-config.yaml --no-include-usage
 ```
 
 ## Next Steps
 
 After batch runs complete:
-1. [Process results](medarc-eval-process.md) into parquet format
-2. [Compute win rates](medarc-eval-winrate.md) to compare models
+1. [Process results](REDACTED-eval-process.md) into parquet format
+2. [Compute win rates](REDACTED-eval-winrate.md) to compare models

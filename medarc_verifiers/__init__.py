@@ -4,9 +4,9 @@ import os
 __version__ = "0.1.0"
 
 # Auto-enable token tracking (unless disabled)
-if os.getenv("MEDARC_DISABLE_TOKEN_TRACKING", "false").lower() != "true":
+if os.getenv("REDACTED_DISABLE_TOKEN_TRACKING", "false").lower() != "true":
     try:
-        from medarc_verifiers.utils.token_tracker import install_patches
+        from REDACTED_verifiers.utils.token_tracker import install_patches
 
         _PATCHES_INSTALLED = install_patches()
 
@@ -21,5 +21,5 @@ if os.getenv("MEDARC_DISABLE_TOKEN_TRACKING", "false").lower() != "true":
         logging.getLogger(__name__).warning(f"Could not import token_tracker: {e}")
 else:
     logging.getLogger(__name__).debug(
-        "Token tracking disabled via MEDARC_DISABLE_TOKEN_TRACKING"
+        "Token tracking disabled via REDACTED_DISABLE_TOKEN_TRACKING"
     )

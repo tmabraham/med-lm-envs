@@ -7,7 +7,7 @@
 
 ### Datasets
 - **Primary dataset(s)**: `Medbullets-4` and `Medbullets-5`
-- **Source links**: [Paper](https://arxiv.org/pdf/2402.18060), [Github](https://github.com/HanjieChen/ChallengeClinicalQA), [HF Dataset](https://huggingface.co/datasets/mkieffer/Medbullets)
+- **Source links**: [Paper](https://arxiv.org/pdf/2402.18060), [Github](https://github.com/HanjieChen/ChallengeClinicalQA), [HF Dataset](https://huggingface.co/datasets/REDACTED/Medbullets)
 - **Split sizes**:
 
     | Split       | Choices         | Count   |

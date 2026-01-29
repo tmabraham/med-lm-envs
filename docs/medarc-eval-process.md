@@ -6,13 +6,13 @@ Convert raw benchmark outputs into analysis-ready parquet files. This step prepa
 
 ```bash
 # Process all completed runs (uses defaults)
-medarc-eval process
+REDACTED-eval process
 
 # Specify directories explicitly
-medarc-eval process --runs-dir runs/raw --output-dir runs/processed
+REDACTED-eval process --runs-dir runs/raw --output-dir runs/processed
 
 # Preview what would be processed
-medarc-eval process --dry-run
+REDACTED-eval process --dry-run
 ```
 
 ## What Processing Does
@@ -55,10 +55,10 @@ By default, only completed jobs are processed:
 
 ```bash
 # Include incomplete runs
-medarc-eval process --process-incomplete
+REDACTED-eval process --process-incomplete
 
 # Filter by specific status
-medarc-eval process --status completed --status failed
+REDACTED-eval process --status completed --status failed
 ```
 
 ### Latest Runs Only
@@ -71,10 +71,10 @@ Delete all processed outputs and rebuild from scratch:
 
 ```bash
 # Interactive confirmation
-medarc-eval process --clean
+REDACTED-eval process --clean
 
 # Non-interactive (for scripts)
-medarc-eval process --clean --yes
+REDACTED-eval process --clean --yes
 ```
 
 ## Using a Config File
@@ -90,7 +90,7 @@ process_incomplete: false
 ```
 
 ```bash
-medarc-eval process --config process-config.yaml
+REDACTED-eval process --config process-config.yaml
 ```
 
 CLI flags override config values.
@@ -115,13 +115,13 @@ hf:
 
 ```bash
 # Prompt before pulling
-medarc-eval process --hf-repo your-org/data --hf-pull-policy prompt
+REDACTED-eval process --hf-repo your-org/data --hf-pull-policy prompt
 
 # Always pull existing data first
-medarc-eval process --hf-repo your-org/data --hf-pull-policy pull
+REDACTED-eval process --hf-repo your-org/data --hf-pull-policy pull
 
 # Start fresh (ignore remote)
-medarc-eval process --hf-repo your-org/data --hf-pull-policy clean
+REDACTED-eval process --hf-repo your-org/data --hf-pull-policy clean
 ```
 
 ### Push After Processing
@@ -133,10 +133,10 @@ When `--hf-repo` is set, processed files are automatically uploaded after comple
 Process and compute win rates in one step:
 
 ```bash
-medarc-eval process --winrate winrate-config.yaml
+REDACTED-eval process --winrate winrate-config.yaml
 ```
 
-This runs `medarc-eval winrate` automatically after processing completes.
+This runs `REDACTED-eval winrate` automatically after processing completes.
 
 ## Example Workflows
 
@@ -144,20 +144,20 @@ This runs `medarc-eval winrate` automatically after processing completes.
 
 ```bash
 # 1. Run benchmarks
-medarc-eval bench --config my-eval.yaml
+REDACTED-eval bench --config my-eval.yaml
 
 # 2. Process results
-medarc-eval process
+REDACTED-eval process
 
 # 3. Compute win rates
-medarc-eval winrate
+REDACTED-eval winrate
 ```
 
 ### CI/CD Pipeline
 
 ```bash
 # Non-interactive processing with cleanup
-medarc-eval process \
+REDACTED-eval process \
   --runs-dir ./benchmark-outputs \
   --output-dir ./processed \
   --clean \
@@ -169,7 +169,7 @@ medarc-eval process \
 
 ```bash
 # Process only new runs (default behavior)
-medarc-eval process
+REDACTED-eval process
 
 # env_index.json tracks what's already processed
 ```
@@ -189,4 +189,4 @@ By default, only jobs with `completed` status are included. Use `--process-incom
 
 ## Next Steps
 
-After processing, [compute win rates](medarc-eval-winrate.md) to compare model performance.
+After processing, [compute win rates](REDACTED-eval-winrate.md) to compare model performance.

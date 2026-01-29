@@ -6,13 +6,13 @@ import numpy as np
 import verifiers as vf
 from datasets import load_dataset
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.parsers import get_parsed_field
-from medarc_verifiers.parsers.xml_parser import XMLParser
-from medarc_verifiers.utils import (
+from REDACTED_verifiers.parsers import get_parsed_field
+from REDACTED_verifiers.parsers.xml_parser import XMLParser
+from REDACTED_verifiers.utils import (
     default_judge_api_key,
     download_file,
     judge_sampling_args_and_headers,
-    medarc_cache_dir,
+    REDACTED_cache_dir,
 )
 from openai import AsyncOpenAI
 from verifiers.types import Info, Messages, State
@@ -197,7 +197,7 @@ def load_environment(
         from rouge import Rouge
 
         rouge_model = Rouge()
-        bleurt_checkpoint = medarc_cache_dir() / "medec" / "bleurt-20"
+        bleurt_checkpoint = REDACTED_cache_dir() / "medec" / "bleurt-20"
         if not bleurt_checkpoint.exists():
             print("Downloading BLEURT-20 checkpoint...")
             url = "https://storage.googleapis.com/bleurt-oss-21/BLEURT-20.zip"

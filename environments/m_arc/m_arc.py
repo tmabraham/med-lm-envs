@@ -5,8 +5,8 @@ from typing import Dict
 import verifiers as vf
 from datasets import Dataset, load_dataset
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
-from medarc_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
+from REDACTED_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
+from REDACTED_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
 from verifiers.utils.data_utils import BOXED_SYSTEM_PROMPT, THINK_BOXED_SYSTEM_PROMPT, extract_boxed_answer
 
 disable_progress_bar()  # suppress datasets mapping progress bar
@@ -43,7 +43,7 @@ def _process_age_strings(text: str, rng: random.Random) -> str:
 
 
 def _build_few_shot(few_shot_examples: Dataset, use_think: bool) -> str:
-    # validation split used for few-shot examples, https://github.com/dbernardo05/medARC-QA/blob/main/evaluate_from_api.py#L284
+    # validation split used for few-shot examples, https://github.com/dbernardo05/REDACTED-QA/blob/main/evaluate_from_api.py#L284
     few_shot_prompt = ""
     for row in few_shot_examples:
         question = row["question"]
@@ -107,7 +107,7 @@ def _to_vf_format(
             )
             opts = shuffled_options
 
-        # https://github.com/dbernardo05/medARC-QA/blob/main/evaluate_from_api.py#L339
+        # https://github.com/dbernardo05/REDACTED-QA/blob/main/evaluate_from_api.py#L339
         instruction = 'The following are multiple choice questions (with answers) about health. Think step by step and then finish your answer with "\\boxed{X}" where X is the correct letter choice.\n'
         few_shot_prompt = _build_few_shot(few_shot_examples, use_think)
         # Per-row RNG keeps age jitter deterministic and process-safe for num_proc>1
@@ -143,7 +143,7 @@ def load_environment(
     **kwargs,
 ) -> vf.Environment:
     """
-    Single-turn M-ARC environment using HuggingFace `mkieffer/M-ARC` dataset
+    Single-turn M-ARC environment using HuggingFace `REDACTED/M-ARC` dataset
 
     Each example is normalized to the fields expected by `vf.SingleTurnEnv`:
         {
@@ -159,8 +159,8 @@ def load_environment(
 
     # -------- load dataset --------
     # the validation split from MMLU-Pro-Health is used for few-shot examples
-    # https://github.com/dbernardo05/medARC-QA/blob/main/evaluate_from_api.py#L253
-    test_raw = load_dataset("mkieffer/M-ARC", split="test")
+    # https://github.com/dbernardo05/REDACTED-QA/blob/main/evaluate_from_api.py#L253
+    test_raw = load_dataset("REDACTED/M-ARC", split="test")
     few_shot_examples = load_dataset("TIGER-Lab/MMLU-Pro", split="validation").filter(
         lambda row: row["category"] == "health"
     )

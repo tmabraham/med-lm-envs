@@ -3,9 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from medarc_verifiers.orchestrate.config import PlanConfig, TaskSpec
-from medarc_verifiers.orchestrate.resources import ResourceError
-from medarc_verifiers.orchestrate.run import OrchestratorOptions, OrchestratorRunner
+from REDACTED_verifiers.orchestrate.config import PlanConfig, TaskSpec
+from REDACTED_verifiers.orchestrate.resources import ResourceError
+from REDACTED_verifiers.orchestrate.run import OrchestratorOptions, OrchestratorRunner
 
 
 class DummyResourceManager:
@@ -135,17 +135,17 @@ async def test_parallel_launch_runs_concurrently(tmp_path: Path, monkeypatch) ->
             terminated = False
         return Result()
 
-    monkeypatch.setattr("medarc_verifiers.orchestrate.run.create_and_start_container", fake_create_and_start_container)
-    monkeypatch.setattr("medarc_verifiers.orchestrate.run.wait_for_readiness_async", fake_wait_for_readiness_async)
-    monkeypatch.setattr("medarc_verifiers.orchestrate.run.start_benchmark", fake_start_benchmark)
-    monkeypatch.setattr("medarc_verifiers.orchestrate.run.wait_benchmark", fake_wait_benchmark)
-    monkeypatch.setattr("medarc_verifiers.orchestrate.run.asyncio.to_thread", fake_to_thread)
+    monkeypatch.setattr("REDACTED_verifiers.orchestrate.run.create_and_start_container", fake_create_and_start_container)
+    monkeypatch.setattr("REDACTED_verifiers.orchestrate.run.wait_for_readiness_async", fake_wait_for_readiness_async)
+    monkeypatch.setattr("REDACTED_verifiers.orchestrate.run.start_benchmark", fake_start_benchmark)
+    monkeypatch.setattr("REDACTED_verifiers.orchestrate.run.wait_benchmark", fake_wait_benchmark)
+    monkeypatch.setattr("REDACTED_verifiers.orchestrate.run.asyncio.to_thread", fake_to_thread)
     monkeypatch.setattr(
-        "medarc_verifiers.orchestrate.docker_vllm.create_and_start_container",
+        "REDACTED_verifiers.orchestrate.docker_vllm.create_and_start_container",
         fake_create_and_start_container,
     )
     monkeypatch.setattr(
-        "medarc_verifiers.orchestrate.docker_vllm.wait_for_readiness_async",
+        "REDACTED_verifiers.orchestrate.docker_vllm.wait_for_readiness_async",
         fake_wait_for_readiness_async,
     )
 

@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
-from medarc_verifiers.cli.process.discovery import RunManifestInfo, RunRecord
-from medarc_verifiers.cli.process.metadata import load_normalized_metadata
-from medarc_verifiers.cli.process.rows import load_rows
+from REDACTED_verifiers.cli.process.discovery import RunManifestInfo, RunRecord
+from REDACTED_verifiers.cli.process.metadata import load_normalized_metadata
+from REDACTED_verifiers.cli.process.rows import load_rows
 
 
 def _write_json(path: Path, payload: dict) -> None:

@@ -4,9 +4,9 @@ from typing import Any
 import verifiers as vf
 from datasets import Dataset, load_dataset
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.prompts import THINK_XML_SYSTEM_PROMPT, XML_SYSTEM_PROMPT, AnswerFormat
-from medarc_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
-from medarc_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
+from REDACTED_verifiers.prompts import THINK_XML_SYSTEM_PROMPT, XML_SYSTEM_PROMPT, AnswerFormat
+from REDACTED_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
+from REDACTED_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
 from verifiers.utils.data_utils import BOXED_SYSTEM_PROMPT, THINK_BOXED_SYSTEM_PROMPT, extract_boxed_answer
 
 
@@ -126,7 +126,7 @@ def load_environment(
 
     if vocab == Vocab.ICD10CM_SAMPLE:
         # load only the sample subset, should contain dev and test
-        ds = load_dataset("sameedkhan/medconceptsqa-sample_medarc_2k", subset.replace("_sample", ""))
+        ds = load_dataset("sameedkhan/medconceptsqa-sample_REDACTED_2k", subset.replace("_sample", ""))
         test = ds["test"]
     else:
         # load the entire dataset, should contain dev and test

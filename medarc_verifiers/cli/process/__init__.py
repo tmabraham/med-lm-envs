@@ -1,4 +1,4 @@
-"""Process command pipeline for exporting MedARC runs."""
+"""Process command pipeline for exporting REDACTED runs."""
 
 from .pipeline import ProcessOptions, ProcessResult, run_process
 

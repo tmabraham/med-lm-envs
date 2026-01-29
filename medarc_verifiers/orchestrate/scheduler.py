@@ -8,8 +8,8 @@ import time
 import heapq
 from typing import Awaitable, Callable, Iterable
 
-from medarc_verifiers.orchestrate.config import TaskSpec
-from medarc_verifiers.orchestrate.resources import ResourceManager, ResourceError
+from REDACTED_verifiers.orchestrate.config import TaskSpec
+from REDACTED_verifiers.orchestrate.resources import ResourceManager, ResourceError
 
 
 @dataclass(frozen=True)

@@ -154,5 +154,4 @@ JAK2 inhibitor therapy (ruxolitinib)
 
 ### Authors
 This environment has been put together by:
-- [Hunar Batra](https://github.com/hunarbatra)
-- [Benjamin Warner](https://github.com/warner-benjamin)
+REDACTED

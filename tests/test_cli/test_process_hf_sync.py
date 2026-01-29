@@ -4,9 +4,9 @@ from pathlib import Path
 
 import pytest
 
-from medarc_verifiers.cli import hf as hf_sync
-from medarc_verifiers.cli.process.aggregate import aggregate_rows_by_env
-from medarc_verifiers.cli.process.writer import WriterConfig, write_env_groups
+from REDACTED_verifiers.cli import hf as hf_sync
+from REDACTED_verifiers.cli.process.aggregate import aggregate_rows_by_env
+from REDACTED_verifiers.cli.process.writer import WriterConfig, write_env_groups
 
 
 def test_sync_to_hub_dry_run_builds_summary(tmp_path: Path) -> None:

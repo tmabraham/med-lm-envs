@@ -13,13 +13,13 @@ def _resolve_include_usage(include_usage: bool | None, is_prime_inference: bool)
 
     Priority:
     1. Explicit include_usage parameter (if not None)
-    2. MEDARC_INCLUDE_USAGE environment variable (if set)
+    2. REDACTED_INCLUDE_USAGE environment variable (if set)
     3. Auto-detect based on whether base_url is Prime Inference
     """
     if include_usage is not None:
         return include_usage
 
-    env_value = os.environ.get("MEDARC_INCLUDE_USAGE")
+    env_value = os.environ.get("REDACTED_INCLUDE_USAGE")
     if env_value is not None:
         return env_value.lower() in ("1", "true", "yes")
 
@@ -36,7 +36,7 @@ def prime_inference_overrides(
     Args:
         base_url: The API base URL. If it matches Prime Inference, overrides are returned.
         include_usage: Whether to include usage reporting. If None, auto-detects
-            based on MEDARC_INCLUDE_USAGE env var or Prime Inference URL.
+            based on REDACTED_INCLUDE_USAGE env var or Prime Inference URL.
 
     Returns:
         A tuple of (extra_headers, sampling_args_overrides, api_key_var).

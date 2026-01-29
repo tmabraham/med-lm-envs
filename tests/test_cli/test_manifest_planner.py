@@ -5,10 +5,10 @@ from pathlib import Path
 
 import pytest
 
-from medarc_verifiers.cli._job_builder import ResolvedJob
-from medarc_verifiers.cli._manifest import RunManifest
-from medarc_verifiers.cli._manifest_planner import ManifestPlanner, _find_auto_resume_candidate
-from medarc_verifiers.cli._schemas import EnvironmentConfigSchema, ModelConfigSchema
+from REDACTED_verifiers.cli._job_builder import ResolvedJob
+from REDACTED_verifiers.cli._manifest import RunManifest
+from REDACTED_verifiers.cli._manifest_planner import ManifestPlanner, _find_auto_resume_candidate
+from REDACTED_verifiers.cli._schemas import EnvironmentConfigSchema, ModelConfigSchema
 
 
 def _make_job(job_id: str = "job-a", env_id: str = "env-a", model_id: str = "model-a") -> ResolvedJob:
@@ -305,7 +305,7 @@ def test_auto_resume_allows_provider_overrides(tmp_path: Path) -> None:
 
 
 def test_restart_in_place_allows_extra_body_usage_override(caplog: pytest.LogCaptureFixture, tmp_path: Path) -> None:
-    caplog.set_level(logging.WARNING, logger="medarc_verifiers.cli._manifest")
+    caplog.set_level(logging.WARNING, logger="REDACTED_verifiers.cli._manifest")
     config_path = tmp_path / "config.yaml"
     config_path.write_text("config: test\n", encoding="utf-8")
     env = EnvironmentConfigSchema(id="env-a", module="env-a")
@@ -367,7 +367,7 @@ def test_restart_in_place_allows_extra_body_usage_override(caplog: pytest.LogCap
 
 
 def test_restart_in_place_allows_sampling_args_override(caplog: pytest.LogCaptureFixture, tmp_path: Path) -> None:
-    caplog.set_level(logging.WARNING, logger="medarc_verifiers.cli._manifest")
+    caplog.set_level(logging.WARNING, logger="REDACTED_verifiers.cli._manifest")
     config_path = tmp_path / "config.yaml"
     config_path.write_text("config: test\n", encoding="utf-8")
     env = EnvironmentConfigSchema(id="env-a", module="env-a")

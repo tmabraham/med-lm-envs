@@ -4,9 +4,9 @@ import verifiers as vf
 from datasets import Dataset, DatasetDict, concatenate_datasets, load_dataset
 from datasets.utils.logging import disable_progress_bar
 from aci_bench.judge_prompts import JUDGE_DIMENSIONS, JUDGE_OUTPUT_JSON, JUDGE_TEMPLATE
-from medarc_verifiers.parsers import JSONParser
-from medarc_verifiers.prompts import XML_SYSTEM_PROMPT, AnswerFormat
-from medarc_verifiers.utils import default_judge_api_key, judge_sampling_args_and_headers
+from REDACTED_verifiers.parsers import JSONParser
+from REDACTED_verifiers.prompts import XML_SYSTEM_PROMPT, AnswerFormat
+from REDACTED_verifiers.utils import default_judge_api_key, judge_sampling_args_and_headers
 from openai import AsyncOpenAI
 from verifiers.types import Info, Messages, State
 from verifiers.utils.data_utils import BOXED_SYSTEM_PROMPT, extract_boxed_answer
@@ -104,12 +104,12 @@ def load_environment(
     # -------- load dataset and convert to vf format --------
     if subset == "all":
         subsets = ["virtassist", "virtscribe", "aci"]
-        ds_dicts = [load_dataset("mkieffer/ACI-Bench-MedARC", name=s) for s in subsets]
+        ds_dicts = [load_dataset("REDACTED/ACI-Bench-REDACTED", name=s) for s in subsets]
         dataset = DatasetDict(
             {split: concatenate_datasets([d[split] for d in ds_dicts]) for split in ds_dicts[0].keys()}
         )
     else:
-        dataset = load_dataset("mkieffer/ACI-Bench-MedARC", name=subset)
+        dataset = load_dataset("REDACTED/ACI-Bench-REDACTED", name=subset)
     if transcript_version != "all":
         dataset = dataset.filter(lambda row: row["transcript_version"] == transcript_version)
     train_ds = _to_vf_format(dataset["train"])

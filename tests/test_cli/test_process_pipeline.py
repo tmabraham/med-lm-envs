@@ -6,12 +6,12 @@ from pathlib import Path
 import pytest
 import pyarrow.parquet as pq
 
-from medarc_verifiers.cli._schemas import EnvironmentExportConfig
-from medarc_verifiers.cli.process import ProcessOptions, run_process
-from medarc_verifiers.cli.winrate import WinrateConfig
-from medarc_verifiers.cli.winrate import discover_datasets, run_winrate
-from medarc_verifiers.cli.hf import HFSyncConfig
-from medarc_verifiers.cli.process.writer import ALLOWED_COLUMNS
+from REDACTED_verifiers.cli._schemas import EnvironmentExportConfig
+from REDACTED_verifiers.cli.process import ProcessOptions, run_process
+from REDACTED_verifiers.cli.winrate import WinrateConfig
+from REDACTED_verifiers.cli.winrate import discover_datasets, run_winrate
+from REDACTED_verifiers.cli.hf import HFSyncConfig
+from REDACTED_verifiers.cli.process.writer import ALLOWED_COLUMNS
 
 
 def _write_json(path: Path, payload: dict) -> None:
@@ -265,7 +265,7 @@ def test_run_winrate_from_hf(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) ->
         captured["kwargs"] = dict(_kwargs)
         return hf_dir
 
-    monkeypatch.setattr("medarc_verifiers.cli.process.workspace.download_hf_repo", _fake_download_hf_repo)
+    monkeypatch.setattr("REDACTED_verifiers.cli.process.workspace.download_hf_repo", _fake_download_hf_repo)
 
     cfg = WinrateConfig()
     result = run_winrate(
@@ -328,7 +328,7 @@ def test_run_process_propagates_keyboard_interrupt(monkeypatch: pytest.MonkeyPat
         call_count["count"] += 1
         raise KeyboardInterrupt
 
-    monkeypatch.setattr("medarc_verifiers.cli.process.rows.load_rows", _boom)
+    monkeypatch.setattr("REDACTED_verifiers.cli.process.rows.load_rows", _boom)
 
     with pytest.raises(KeyboardInterrupt):
         run_process(options)

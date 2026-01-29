@@ -3,9 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from medarc_verifiers.orchestrate.config import TaskSpec
-from medarc_verifiers.orchestrate.resources import ResourceError
-from medarc_verifiers.orchestrate.scheduler import TaskScheduler
+from REDACTED_verifiers.orchestrate.config import TaskSpec
+from REDACTED_verifiers.orchestrate.resources import ResourceError
+from REDACTED_verifiers.orchestrate.scheduler import TaskScheduler
 
 
 class DummyResourceManager:

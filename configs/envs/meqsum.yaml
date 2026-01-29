@@ -1,5 +1,5 @@
 # MeQSum - Consumer Health Question Summarization
-# Dataset: medarc/MeQSum-patient-consumer-health-questions
+# Dataset: REDACTED/MeQSum-patient-consumer-health-questions
 
 meqsum:
   env_name: meqsum

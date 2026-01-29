@@ -54,7 +54,7 @@ uv run vf-eval pubhealthbench --split freeform -m gpt-5-mini -n 10
 ### Authors
 This environment has been put together by:
 
-Benjamin Warner - ([@warner-benjamin](https://github.com/warner-benjamin))
+REDACTED
 
 ### Citation
 Dataset:

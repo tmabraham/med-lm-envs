@@ -99,4 +99,4 @@ results = await env.evaluate(client, "gpt-4.1-mini", num_examples=10)
 ### Authors
 This environment has been put together by:
 
-Shamus Sim Zi Yang - ([@ss8319](https://github.com/ss8319))
+REDACTED

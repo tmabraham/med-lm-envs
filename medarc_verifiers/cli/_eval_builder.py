@@ -8,22 +8,22 @@ from typing import Any, Callable, Mapping
 
 from verifiers.types import ClientConfig, EvalConfig
 
-from medarc_verifiers.cli._schemas import EnvironmentConfigSchema, ModelConfigSchema
-from medarc_verifiers.cli.utils.endpoint_utils import (
+from REDACTED_verifiers.cli._schemas import EnvironmentConfigSchema, ModelConfigSchema
+from REDACTED_verifiers.cli.utils.endpoint_utils import (
     EndpointRegistry,
     EnvMetadataCache,
     load_env_metadata,
     resolve_model_endpoint,
 )
-from medarc_verifiers.cli.utils.env_args import merge_env_args
-from medarc_verifiers.cli.utils.shared import (
+from REDACTED_verifiers.cli.utils.env_args import merge_env_args
+from REDACTED_verifiers.cli.utils.shared import (
     DEFAULT_BATCH_MAX_CONCURRENT,
     merge_sampling_overrides,
     normalize_headers,
     resolve_env_identifier,
     resolve_max_concurrent,
 )
-from medarc_verifiers.utils.prime_inference import prime_inference_overrides
+from REDACTED_verifiers.utils.prime_inference import prime_inference_overrides
 
 logger = logging.getLogger(__name__)
 

@@ -9,7 +9,7 @@
 - **Primary dataset(s)**: `Med-HALT` (reasoning subset)
 - **Source links**: [Paper](https://arxiv.org/abs/2307.15343), [HF Dataset](https://huggingface.co/datasets/openlifescienceai/Med-HALT)
 The upstream dataset ships only a **single split**, but internally includes a `split_type` field (`train` / `val` / `test`).  
-This environment **filters to the `val` subset**, consistent with MedARC evaluation standards.
+This environment **filters to the `val` subset**, consistent with REDACTED evaluation standards.
 
 - **Split sizes**:
 

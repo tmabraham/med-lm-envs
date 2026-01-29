@@ -27,22 +27,22 @@ Evaluation environment for the [HPAI-BSC/CareQA](https://huggingface.co/datasets
 
 **Multiple-choice evaluation:**
 ```bash
-medarc-eval careqa --mode en --model gpt-4.1-mini --num-examples 10 -s
+REDACTED-eval careqa --mode en --model gpt-4.1-mini --num-examples 10 -s
 ```
 
 **Open-ended evaluation:**
 ```bash
-medarc-eval careqa --mode open --model gpt-4.1-mini --num-examples 10 -s
+REDACTED-eval careqa --mode open --model gpt-4.1-mini --num-examples 10 -s
 ```
 
 **With think-mode prompting (MCQ only):**
 ```bash
-medarc-eval careqa --mode en --use-think --model gpt-4.1-mini --num-examples 10 -s
+REDACTED-eval careqa --mode en --use-think --model gpt-4.1-mini --num-examples 10 -s
 ```
 
 **With shuffled answer options (MCQ only):**
 ```bash
-medarc-eval careqa --mode en --shuffle-answers --shuffle-seed 42 --model gpt-4.1-mini -n 10 -s
+REDACTED-eval careqa --mode en --shuffle-answers --shuffle-seed 42 --model gpt-4.1-mini -n 10 -s
 ```
 
 ### Configuration Options

@@ -19,8 +19,8 @@ from typing import Any
 import verifiers as vf
 from datasets import load_dataset
 from med_halt_prompts import reasoning_fct_prompt, reasoning_fct_shots, reasoning_nota_prompt, reasoning_nota_shots
-from medarc_verifiers.parsers import JSONParser
-from medarc_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
+from REDACTED_verifiers.parsers import JSONParser
+from REDACTED_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
 
 
 class MedHaltSplit(str, Enum):

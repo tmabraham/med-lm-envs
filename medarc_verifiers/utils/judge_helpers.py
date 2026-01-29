@@ -152,7 +152,7 @@ def judge_sampling_args_and_headers(
         base_url: The base URL for the API. Used for Prime Inference detection.
         timeout: Request timeout in seconds.
         include_usage: Whether to include usage reporting in extra_body.
-            If None (default), checks MEDARC_INCLUDE_USAGE env var, then
+            If None (default), checks REDACTED_INCLUDE_USAGE env var, then
             auto-detects based on base_url:
             - True if base_url is Prime Inference URL
             - False otherwise

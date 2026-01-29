@@ -7,7 +7,7 @@
 
 ### Datasets
 - **Primary dataset(s)**: MedRedQA - large non-factoid English consumer Question Answering (QA) dataset containing 51,000 pairs of consumer questions and their corresponding expert answers. This dataset is useful for bench-marking or training systems on more difficult real-world questions and responses which may contain spelling or formatting errors, or lexical gaps between consumer and expert vocabularies.
-- **Source links**: https://huggingface.co/datasets/bagga005/medredqa
+- **Source links**: https://huggingface.co/datasets/REDACTED/medredqa
 - **Split sizes**: 40.7k (train) / 5.1k (val) / 5k (test)
 
 ### Task
@@ -99,4 +99,4 @@ uv run vf-eval medredqa \
 ### Authors
 This environment has been put together by:
 
-Kunal Bagga - ([@bagga005](https://github.com/bagga005))
+REDACTED

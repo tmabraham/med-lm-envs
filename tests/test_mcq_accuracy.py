@@ -2,7 +2,7 @@
 
 import pytest
 
-from medarc_verifiers.rewards.multiple_choice_accuracy import MCQAccuracyResult, multiple_choice_accuracy
+from REDACTED_verifiers.rewards.multiple_choice_accuracy import MCQAccuracyResult, multiple_choice_accuracy
 
 
 def test_anchored_final_answer_colon():

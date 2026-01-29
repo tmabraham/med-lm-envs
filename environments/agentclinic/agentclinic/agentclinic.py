@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional
 
 import verifiers as vf
 from datasets import Dataset
-from medarc_verifiers.utils import default_judge_api_key, judge_sampling_args_and_headers
+from REDACTED_verifiers.utils import default_judge_api_key, judge_sampling_args_and_headers
 from openai import AsyncOpenAI
 
 from agentclinic.message_utils import extract_last_assistant_text

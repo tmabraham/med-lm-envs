@@ -1,4 +1,4 @@
-from medarc_verifiers.cli.process.rollout import derive_base_env_id
+from REDACTED_verifiers.cli.process.rollout import derive_base_env_id
 
 
 def test_derive_base_env_id_strips_suffix() -> None:

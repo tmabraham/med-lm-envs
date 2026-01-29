@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from medarc_verifiers.cli.process.discovery import RunManifestInfo, RunRecord
-from medarc_verifiers.cli.process.metadata import load_normalized_metadata
+from REDACTED_verifiers.cli.process.discovery import RunManifestInfo, RunRecord
+from REDACTED_verifiers.cli.process.metadata import load_normalized_metadata
 
 
 def _write_json(path: Path, payload: dict) -> None:

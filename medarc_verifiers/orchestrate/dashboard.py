@@ -11,7 +11,7 @@ from rich.live import Live
 from rich.table import Table
 from rich.text import Text
 
-from medarc_verifiers.orchestrate.state import TaskManifest
+from REDACTED_verifiers.orchestrate.state import TaskManifest
 
 
 ACTIVE_STATES = {"allocating", "launching", "loading", "running"}

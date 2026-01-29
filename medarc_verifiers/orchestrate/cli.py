@@ -7,11 +7,11 @@ import re
 from pathlib import Path
 from datetime import datetime
 
-from medarc_verifiers.orchestrate.config import TaskSpec, expand_tasks, load_plan
-from medarc_verifiers.orchestrate.docker_vllm import cleanup_orphan_containers
-from medarc_verifiers.orchestrate.resources import ResourceError, ResourceManager, discover_gpus, parse_index_range
-from medarc_verifiers.orchestrate.run import OrchestratorOptions, OrchestratorRunner
-from medarc_verifiers.orchestrate.state import filter_tasks_for_resume, load_summary
+from REDACTED_verifiers.orchestrate.config import TaskSpec, expand_tasks, load_plan
+from REDACTED_verifiers.orchestrate.docker_vllm import cleanup_orphan_containers
+from REDACTED_verifiers.orchestrate.resources import ResourceError, ResourceManager, discover_gpus, parse_index_range
+from REDACTED_verifiers.orchestrate.run import OrchestratorOptions, OrchestratorRunner
+from REDACTED_verifiers.orchestrate.state import filter_tasks_for_resume, load_summary
 
 
 _RUN_ID_ALLOWED = re.compile(r"[^a-zA-Z0-9_.-]+")
@@ -24,7 +24,7 @@ def _slug_run_id(value: str, *, fallback: str = "run") -> str:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="medarc-orchestrate",
+        prog="REDACTED-orchestrate",
         description="Run vLLM orchestration over job configs.",
     )
     parser.add_argument("--plan", required=True, type=Path, help="Path to orchestrator plan YAML.")

@@ -6,13 +6,13 @@ Compare model performance across benchmarks using HELM-style win rate calculatio
 
 ```bash
 # Compute win rates from processed results
-medarc-eval winrate
+REDACTED-eval winrate
 
 # See which models are available
-medarc-eval winrate --list-models
+REDACTED-eval winrate --list-models
 
 # Specify directories
-medarc-eval winrate --processed-dir runs/processed --output-dir runs/winrate
+REDACTED-eval winrate --processed-dir runs/processed --output-dir runs/winrate
 ```
 
 ## Prerequisites
@@ -21,7 +21,7 @@ Win rate computation requires processed parquet files with an `env_index.json`:
 
 ```bash
 # If you haven't processed yet:
-medarc-eval process
+REDACTED-eval process
 ```
 
 ## How Win Rates Work
@@ -104,7 +104,7 @@ exclude_model:
 ```
 
 ```bash
-medarc-eval winrate --config winrate-config.yaml
+REDACTED-eval winrate --config winrate-config.yaml
 ```
 
 ## Example Workflows
@@ -113,7 +113,7 @@ medarc-eval winrate --config winrate-config.yaml
 
 ```bash
 # Only compare these two models
-medarc-eval winrate \
+REDACTED-eval winrate \
   --include-model gpt-4o \
   --include-model claude-3-5-sonnet
 ```
@@ -121,7 +121,7 @@ medarc-eval winrate \
 ### Exclude Baseline Models
 
 ```bash
-medarc-eval winrate --exclude-model random-baseline
+REDACTED-eval winrate --exclude-model random-baseline
 ```
 
 ### Strict Benchmark Coverage
@@ -129,7 +129,7 @@ medarc-eval winrate --exclude-model random-baseline
 Only use benchmarks where all models have results:
 
 ```bash
-medarc-eval winrate \
+REDACTED-eval winrate \
   --include-model gpt-4o \
   --include-model gpt-4o-mini \
   --partial-datasets strict
@@ -140,7 +140,7 @@ medarc-eval winrate \
 Weight benchmarks by log of dataset size (larger benchmarks count more):
 
 ```bash
-medarc-eval winrate --weight-policy ln
+REDACTED-eval winrate --weight-policy ln
 ```
 
 ## Hugging Face Integration
@@ -148,7 +148,7 @@ medarc-eval winrate --weight-policy ln
 ### Pull Processed Data from Hub
 
 ```bash
-medarc-eval winrate \
+REDACTED-eval winrate \
   --hf-processed-repo your-org/processed-benchmarks \
   --hf-processed-pull \
   --hf-token $HF_TOKEN
@@ -157,7 +157,7 @@ medarc-eval winrate \
 ### Upload Win Rates to Hub
 
 ```bash
-medarc-eval winrate \
+REDACTED-eval winrate \
   --hf-winrate-repo your-org/winrate-results \
   --hf-token $HF_TOKEN \
   --hf-private
@@ -219,7 +219,7 @@ hf:
 
 ### "No models found"
 
-- Ensure `medarc-eval process` has been run
+- Ensure `REDACTED-eval process` has been run
 - Check that `env_index.json` exists in `--processed-dir`
 
 ### Unexpected win rates

@@ -6,8 +6,8 @@ from typing import Optional
 
 import pytest
 
-from medarc_verifiers.cli._single_run import EnvOptionBinding, extract_env_cli_args
-from medarc_verifiers.cli.utils.env_args import MissingEnvParamError, ensure_required_params
+from REDACTED_verifiers.cli._single_run import EnvOptionBinding, extract_env_cli_args
+from REDACTED_verifiers.cli.utils.env_args import MissingEnvParamError, ensure_required_params
 
 
 @dataclass(frozen=True)

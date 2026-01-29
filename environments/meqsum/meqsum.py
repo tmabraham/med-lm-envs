@@ -4,7 +4,7 @@ MeQSum Environment
 Evaluation environment for consumer health question summarization.
 Uses LLM-as-judge evaluation plus automatic metrics (BLEU, ROUGE, BERTScore).
 
-Dataset: medarc/MeQSum-patient-consumer-health-questions
+Dataset: REDACTED/MeQSum-patient-consumer-health-questions
 Based on: Ben Abacha & Demner-Fushman, "On the Summarization of Consumer Health Questions" (ACL 2019)
 """
 
@@ -15,8 +15,8 @@ import evaluate
 import verifiers as vf
 from datasets import load_dataset
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.parsers import JSONParser
-from medarc_verifiers.utils import default_judge_api_key, judge_sampling_args_and_headers
+from REDACTED_verifiers.parsers import JSONParser
+from REDACTED_verifiers.utils import default_judge_api_key, judge_sampling_args_and_headers
 from openai import AsyncOpenAI
 from verifiers.types import Info, Messages, State
 
@@ -203,7 +203,7 @@ def load_environment(
         A configured vf.SingleTurnEnv for health question summarization evaluation.
     """
     # Load dataset
-    eval_dataset = load_dataset("medarc/MeQSum-patient-consumer-health-questions", split=split)
+    eval_dataset = load_dataset("REDACTED/MeQSum-patient-consumer-health-questions", split=split)
 
     def _map(ex: dict) -> dict:
         """Map dataset example to environment format."""

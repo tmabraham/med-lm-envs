@@ -75,4 +75,4 @@ The evaluation code draws strongly on https://github.com/UKGovernmentBEIS/inspec
 ### Authors
 This environment has been put together by:
 
-Robert Scholz - ([@rscgh](https://github.com/rscgh))
+REDACTED

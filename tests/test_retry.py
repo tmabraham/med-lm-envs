@@ -1,7 +1,7 @@
 import httpx
 import pytest
 
-from medarc_verifiers.utils.retry import call_with_retries
+from REDACTEDED_verifiers.utils.retry import call_with_retries
 
 
 class DummyResponse:

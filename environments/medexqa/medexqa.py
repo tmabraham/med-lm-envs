@@ -5,15 +5,15 @@ import evaluate
 import pandas as pd
 import verifiers as vf
 from datasets import Dataset, concatenate_datasets
-from medarc_verifiers.parsers import XMLParser
-from medarc_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
-from medarc_verifiers.utils import (
+from REDACTED_verifiers.parsers import XMLParser
+from REDACTED_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
+from REDACTED_verifiers.utils import (
     default_judge_api_key,
     download_file,
     judge_sampling_args_and_headers,
-    medarc_cache_dir,
+    REDACTED_cache_dir,
 )
-from medarc_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
+from REDACTED_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
 from openai import AsyncOpenAI
 from verifiers.types import Info, State
 
@@ -102,7 +102,7 @@ def _build_question_str(question: str, options: dict[str, str]) -> str:
 
 
 def _resolve_cache_dir(cache_dir: Path | str | None = None) -> Path:
-    resolved = medarc_cache_dir(cache_dir) / "medexqa"
+    resolved = REDACTED_cache_dir(cache_dir) / "medexqa"
     resolved.mkdir(parents=True, exist_ok=True)
     return resolved
 

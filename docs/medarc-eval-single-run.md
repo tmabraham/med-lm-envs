@@ -8,16 +8,16 @@ This mode wraps the verifiers [`vf-eval`](https://github.com/primeintellect-ai/v
 
 ```bash
 # Basic: run 25 MedQA questions with GPT-4.1-mini
-medarc-eval medqa -m gpt-4.1-mini -n 25
+REDACTED-eval medqa -m gpt-4.1-mini -n 25
 
 # See all options for an environment
-medarc-eval medqa --help
+REDACTED-eval medqa --help
 
 # Preview without running
-medarc-eval medqa -m gpt-4.1-mini -n 25 --dry-run
+REDACTED-eval medqa -m gpt-4.1-mini -n 25 --dry-run
 ```
 
-> **Remember:** The environment name must come first. `medarc-eval --verbose medqa` won't work.
+> **Remember:** The environment name must come first. `REDACTED-eval --verbose medqa` won't work.
 
 ## Common Options
 
@@ -66,14 +66,14 @@ When using Prime Inference (`https://api.pinference.ai/api/v1`), the CLI automat
 - Adds `X-Prime-Team-ID` header if `PRIME_TEAM_ID` env var is set
 - Enables usage reporting in API requests
 
-Optionally set `MEDARC_INCLUDE_USAGE=true` to enable usage reporting for non-Prime endpoints instead of using `--include-usage`.
+Optionally set `REDACTED_INCLUDE_USAGE=true` to enable usage reporting for non-Prime endpoints instead of using `--include-usage`.
 
 ## Environment-Specific Options
 
 Each benchmark has its own options based on its `load_environment()` function. These appear automatically when you run `--help`:
 
 ```bash
-medarc-eval longhealth --help
+REDACTED-eval longhealth --help
 ```
 
 Example output:
@@ -93,10 +93,10 @@ For arguments that can't be expressed as simple flags (dicts, nested structures)
 
 ```bash
 # Single JSON object
-medarc-eval careqa --env-args '{"split": "open", "judge_model": "gpt-4o"}'
+REDACTED-eval careqa --env-args '{"split": "open", "judge_model": "gpt-4o"}'
 
 # Key=value pairs (repeatable)
-medarc-eval careqa --env-arg split=open --env-arg judge_model=gpt-4o
+REDACTED-eval careqa --env-arg split=open --env-arg judge_model=gpt-4o
 ```
 
 **Precedence** (highest wins):
@@ -109,7 +109,7 @@ medarc-eval careqa --env-arg split=open --env-arg judge_model=gpt-4o
 ### Run with a Local Model
 
 ```bash
-medarc-eval medqa \
+REDACTED-eval medqa \
   -m openai/my-local-model \
   -b http://localhost:8000/v1 \
   -n 100
@@ -120,7 +120,7 @@ medarc-eval medqa \
 Many benchmarks support answer shuffling to test robustness:
 
 ```bash
-medarc-eval medqa \
+REDACTED-eval medqa \
   -m gpt-4.1-mini \
   -n 100 \
   --shuffle-answers \
@@ -130,7 +130,7 @@ medarc-eval medqa \
 ### Use a Judge Model for Open-Ended Tasks
 
 ```bash
-medarc-eval careqa \
+REDACTED-eval careqa \
   -m gpt-4.1-mini \
   -n 50 \
   --env-args '{"split": "open", "judge_model": "gpt-4o-mini"}'
@@ -139,7 +139,7 @@ medarc-eval careqa \
 ### High-Throughput Evaluation
 
 ```bash
-medarc-eval pubmedqa \
+REDACTED-eval pubmedqa \
   -m gpt-4.1-mini \
   -n -1 \                    # All examples
   --max-concurrent 20 \      # 20 parallel requests
@@ -161,6 +161,6 @@ Run any environment from the `environments/` directory:
 | `careqa` | CareQA (MCQ and open-ended) |
 | `medagentbench` | Multi-turn agent benchmark (requires FHIR server) |
 
-Use `medarc-eval <env> --help` to see environment-specific options.
+Use `REDACTED-eval <env> --help` to see environment-specific options.
 
-If an environment isn't found, install it first with `vf-install <env>` (local) or `prime env install owner/env` (from Hub). See [Installing Environments](medarc-eval.md#installing-environments).
+If an environment isn't found, install it first with `vf-install <env>` (local) or `prime env install owner/env` (from Hub). See [Installing Environments](REDACTED-eval.md#installing-environments).

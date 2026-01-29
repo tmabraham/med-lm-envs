@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from medarc_verifiers.orchestrate.run import _sanitize_task_dirname, _task_root_for_id
+from REDACTED_verifiers.orchestrate.run import _sanitize_task_dirname, _task_root_for_id
 
 
 def test_sanitize_task_dirname_removes_colons() -> None:

@@ -6,8 +6,8 @@ import numpy as np
 import verifiers as vf
 from datasets import load_dataset
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.parsers.xml_parser import XMLParser
-from medarc_verifiers.prompts import (
+from REDACTED_verifiers.parsers.xml_parser import XMLParser
+from REDACTED_verifiers.prompts import (
     BOXED_TOOL_SYSTEM_PROMPT,
     THINK_BOXED_TOOL_SYSTEM_PROMPT,
     THINK_XML_SYSTEM_PROMPT,
@@ -311,7 +311,7 @@ def load_environment(
         else:
             system_prompt = system_prompt
         parser_fields = ["think", "answer"] if use_think else ["answer"]
-        parser = XMLParser(fields=parser_fields, answer_field="answer")  # medarc_verifiers' XMLParser
+        parser = XMLParser(fields=parser_fields, answer_field="answer")  # REDACTED_verifiers' XMLParser
     elif answer_format == AnswerFormat.BOXED:
         if system_prompt is None:
             if add_python_tool or add_calculator_tool:

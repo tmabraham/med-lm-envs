@@ -1,5 +1,5 @@
-from medarc_verifiers.orchestrate.dashboard import build_table
-from medarc_verifiers.orchestrate.state import JobState, TaskManifest
+from REDACTED_verifiers.orchestrate.dashboard import build_table
+from REDACTED_verifiers.orchestrate.state import JobState, TaskManifest
 
 
 def test_build_table_filters_to_active_states() -> None:

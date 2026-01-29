@@ -13,13 +13,13 @@ from typing import Any, Mapping, Sequence
 
 from verifiers.utils.eval_utils import run_evaluation
 
-from medarc_verifiers.cli._constants import BENCH_COMMAND, COMMAND
-from medarc_verifiers.cli._eval_builder import build_client_config, build_eval_config
-from medarc_verifiers.cli._schemas import ModelConfigSchema
-from medarc_verifiers.cli.utils.env_args import EnvParam, MissingEnvParamError, gather_env_cli_metadata, merge_env_args
-from medarc_verifiers.cli.utils.endpoint_utils import load_endpoint_registry
-from medarc_verifiers.cli.utils.overrides import build_cli_override
-from medarc_verifiers.cli.utils.shared import (
+from REDACTED_verifiers.cli._constants import BENCH_COMMAND, COMMAND
+from REDACTED_verifiers.cli._eval_builder import build_client_config, build_eval_config
+from REDACTED_verifiers.cli._schemas import ModelConfigSchema
+from REDACTED_verifiers.cli.utils.env_args import EnvParam, MissingEnvParamError, gather_env_cli_metadata, merge_env_args
+from REDACTED_verifiers.cli.utils.endpoint_utils import load_endpoint_registry
+from REDACTED_verifiers.cli.utils.overrides import build_cli_override
+from REDACTED_verifiers.cli.utils.shared import (
     HEADER_SEPARATOR,
     STATE_COLUMNS_SEPARATOR,
     DEFAULT_SINGLE_RUN_MAX_CONCURRENT,
@@ -59,7 +59,7 @@ class _SingleRunEnvConfig:
 
 
 def run_single_mode(argv: Sequence[str] | None = None) -> int:
-    """Entry point for single-run (medarc-eval style) execution."""
+    """Entry point for single-run (REDACTED-eval style) execution."""
     args_list = list(argv) if argv is not None else sys.argv[1:]
     if not args_list:
         _print_env_first_error()
@@ -198,7 +198,7 @@ def run_single_mode(argv: Sequence[str] | None = None) -> int:
 
     # Set the include_usage environment variable if explicitly specified
     if args.include_usage is not None:
-        os.environ["MEDARC_INCLUDE_USAGE"] = "true" if args.include_usage else "false"
+        os.environ["REDACTED_INCLUDE_USAGE"] = "true" if args.include_usage else "false"
 
     try:
         asyncio.run(run_evaluation(eval_config))

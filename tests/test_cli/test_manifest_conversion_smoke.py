@@ -5,8 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-from medarc_verifiers.cli._manifest import MANIFEST_FILENAME, RunManifestModel
-from medarc_verifiers.cli.process.discovery import discover_run_records
+from REDACTED_verifiers.cli._manifest import MANIFEST_FILENAME, RunManifestModel
+from REDACTED_verifiers.cli.process.discovery import discover_run_records
 
 
 def _job_config(job_id: str, env_id: str, *, seed: int) -> dict:

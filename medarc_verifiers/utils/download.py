@@ -70,10 +70,10 @@ def download_file(
         raise
 
 
-def medarc_cache_dir(cache_dir: Path | str | None) -> Path:
+def REDACTED_cache_dir(cache_dir: Path | str | None) -> Path:
     if cache_dir is None:
-        env_override = os.getenv("MEDARC_CACHE_DIR")
+        env_override = os.getenv("REDACTED_CACHE_DIR")
         if env_override:
             return Path(env_override)
-        return Path.home() / ".cache" / "medarc"
+        return Path.home() / ".cache" / "REDACTED"
     return Path(cache_dir)

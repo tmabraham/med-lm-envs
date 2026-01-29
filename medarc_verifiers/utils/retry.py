@@ -259,15 +259,15 @@ def patch_verifiers_model_response_retry(
     *,
     attempts: int = 3,
     backoff_s: float = 1.0,
-    log_path: str | Path = "medarc_model_retry.log",
+    log_path: str | Path = "REDACTED_model_retry.log",
 ) -> None:
     """Monkeypatch Environment.get_model_response to add per-call retries and log to a file."""
-    if getattr(Environment, "_medarc_retry_patched", False):
+    if getattr(Environment, "_REDACTED_retry_patched", False):
         return
 
     log_file = Path(log_path)
     log_file.parent.mkdir(parents=True, exist_ok=True)
-    log = logging.getLogger("medarc_verifiers.retry")
+    log = logging.getLogger("REDACTED_verifiers.retry")
     log.setLevel(logging.INFO)
     log.propagate = False
     if not any(isinstance(h, logging.FileHandler) and Path(h.baseFilename) == log_file for h in log.handlers):  # type: ignore[attr-defined]
@@ -283,10 +283,10 @@ def patch_verifiers_model_response_retry(
     # Suppress noisy 429 errors emitted inside Environment.get_model_response;
     # our retry wrapper will log the retry instead.
     suppress_logger = logging.getLogger("verifiers.envs.SingleTurnEnv")
-    if not any(getattr(f, "_medarc_429_filter", False) for f in suppress_logger.filters):
+    if not any(getattr(f, "_REDACTED_429_filter", False) for f in suppress_logger.filters):
 
         class _429Filter(logging.Filter):
-            _medarc_429_filter = True
+            _REDACTED_429_filter = True
 
             def filter(self, record: logging.LogRecord) -> bool:  # noqa: D401
                 msg = record.getMessage()
@@ -310,4 +310,4 @@ def patch_verifiers_model_response_retry(
         )
 
     Environment.get_model_response = _patched_get_model_response  # type: ignore[assignment]
-    Environment._medarc_retry_patched = True  # type: ignore[attr-defined]
+    Environment._REDACTED_retry_patched = True  # type: ignore[attr-defined]

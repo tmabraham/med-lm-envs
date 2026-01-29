@@ -15,16 +15,16 @@ import signal
 
 from dotenv import dotenv_values
 
-from medarc_verifiers.orchestrate.bench import (
+from REDACTED_verifiers.orchestrate.bench import (
     BenchProcess,
     render_command,
     start_benchmark,
     terminate_benchmark,
     wait_benchmark,
 )
-from medarc_verifiers.orchestrate.config import PlanConfig, TaskSpec
-from medarc_verifiers.orchestrate.dashboard import ACTIVE_STATES, OrchestratorDashboard
-from medarc_verifiers.orchestrate.docker_vllm import (
+from REDACTED_verifiers.orchestrate.config import PlanConfig, TaskSpec
+from REDACTED_verifiers.orchestrate.dashboard import ACTIVE_STATES, OrchestratorDashboard
+from REDACTED_verifiers.orchestrate.docker_vllm import (
     build_container_args,
     ContainerLogStreamer,
     create_and_start_container,
@@ -33,13 +33,13 @@ from medarc_verifiers.orchestrate.docker_vllm import (
     wait_for_readiness_async,
     write_container_request,
 )
-from medarc_verifiers.orchestrate.resources import ResourceManager
-from medarc_verifiers.orchestrate.scheduler import Allocation, TaskScheduler
-from medarc_verifiers.orchestrate.state import JobState, TaskManifest, TaskPaths, write_summary, write_task_manifest, write_task_result, write_text
+from REDACTED_verifiers.orchestrate.resources import ResourceManager
+from REDACTED_verifiers.orchestrate.scheduler import Allocation, TaskScheduler
+from REDACTED_verifiers.orchestrate.state import JobState, TaskManifest, TaskPaths, write_summary, write_task_manifest, write_task_result, write_text
 
 
 COMMAND_TEMPLATE = (
-    "uv run medarc-eval bench --config {job_config_path} --api-base-url {base_url} --on-complete exit"
+    "uv run REDACTED-eval bench --config {job_config_path} --api-base-url {base_url} --on-complete exit"
 )
 
 _TASK_DIR_ALLOWED = re.compile(r"[^a-zA-Z0-9_.-]+")

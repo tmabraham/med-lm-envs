@@ -1,6 +1,6 @@
 import pytest
 
-from medarc_verifiers.utils.judge_helpers import (
+from REDACTED_verifiers.utils.judge_helpers import (
     PRIME_INFERENCE_URL,
     default_judge_api_key,
     judge_sampling_args_and_headers,
@@ -13,7 +13,7 @@ def test_judge_sampling_defaults_supports_fuzzy_match(monkeypatch: pytest.Monkey
     When not using Prime Inference URL, extra_body.usage should NOT be included by default.
     """
     monkeypatch.delenv("PRIME_TEAM_ID", raising=False)
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result, _ = judge_sampling_args_and_headers("Claude-Sonnet-4.5")
     assert result == {"temperature": 0.5, "timeout": 300}
@@ -34,7 +34,7 @@ def test_judge_sampling_defaults_supports_fuzzy_match(monkeypatch: pytest.Monkey
 def test_judge_sampling_includes_usage_for_prime_inference(monkeypatch: pytest.MonkeyPatch) -> None:
     """When using Prime Inference URL, extra_body.usage should be included."""
     monkeypatch.setenv("PRIME_TEAM_ID", "prime-team-123")
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result, headers = judge_sampling_args_and_headers("gpt-4.1", base_url=PRIME_INFERENCE_URL)
 
@@ -47,7 +47,7 @@ def test_judge_sampling_includes_usage_for_prime_inference(monkeypatch: pytest.M
 def test_judge_sampling_explicit_include_usage_true(monkeypatch: pytest.MonkeyPatch) -> None:
     """Explicit include_usage=True should include usage regardless of URL."""
     monkeypatch.delenv("PRIME_TEAM_ID", raising=False)
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result, _ = judge_sampling_args_and_headers("Claude-Sonnet-4.5", include_usage=True)
     assert result == {"temperature": 0.5, "extra_body": {"usage": {"include": True}}, "timeout": 300}
@@ -56,7 +56,7 @@ def test_judge_sampling_explicit_include_usage_true(monkeypatch: pytest.MonkeyPa
 def test_judge_sampling_explicit_include_usage_false(monkeypatch: pytest.MonkeyPatch) -> None:
     """Explicit include_usage=False should exclude usage even for Prime Inference."""
     monkeypatch.setenv("PRIME_TEAM_ID", "prime-team-123")
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result, headers = judge_sampling_args_and_headers(
         "gpt-4.1", base_url=PRIME_INFERENCE_URL, include_usage=False
@@ -69,16 +69,16 @@ def test_judge_sampling_explicit_include_usage_false(monkeypatch: pytest.MonkeyP
 
 
 def test_judge_sampling_env_var_include_usage(monkeypatch: pytest.MonkeyPatch) -> None:
-    """MEDARC_INCLUDE_USAGE env var should control usage inclusion."""
+    """REDACTED_INCLUDE_USAGE env var should control usage inclusion."""
     monkeypatch.delenv("PRIME_TEAM_ID", raising=False)
 
     # Test with env var set to true
-    monkeypatch.setenv("MEDARC_INCLUDE_USAGE", "true")
+    monkeypatch.setenv("REDACTED_INCLUDE_USAGE", "true")
     result, _ = judge_sampling_args_and_headers("Claude-Sonnet-4.5")
     assert result == {"temperature": 0.5, "extra_body": {"usage": {"include": True}}, "timeout": 300}
 
     # Test with env var set to false (should override Prime Inference auto-detect)
-    monkeypatch.setenv("MEDARC_INCLUDE_USAGE", "false")
+    monkeypatch.setenv("REDACTED_INCLUDE_USAGE", "false")
     monkeypatch.setenv("PRIME_TEAM_ID", "prime-team-123")
     result, _ = judge_sampling_args_and_headers("gpt-4.1", base_url=PRIME_INFERENCE_URL)
     assert "extra_body" not in result or result.get("extra_body", {}).get("usage") is None
@@ -86,7 +86,7 @@ def test_judge_sampling_env_var_include_usage(monkeypatch: pytest.MonkeyPatch) -
 
 def test_judge_sampling_defaults_injects_prime_team_headers(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("PRIME_TEAM_ID", "prime-team-123")
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result, headers = judge_sampling_args_and_headers("gpt-4.1", base_url=PRIME_INFERENCE_URL)
 
@@ -98,7 +98,7 @@ def test_judge_sampling_defaults_injects_prime_team_headers(monkeypatch: pytest.
 
 def test_judge_sampling_defaults_unknown_judge(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.delenv("PRIME_TEAM_ID", raising=False)
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     with pytest.raises(KeyError):
         judge_sampling_args_and_headers("unknown-judge")
@@ -109,7 +109,7 @@ def test_judge_sampling_defaults_supports_multiple_names_per_defaults(
 ) -> None:
     """When not using Prime Inference URL, extra_body.usage should NOT be included."""
     monkeypatch.delenv("PRIME_TEAM_ID", raising=False)
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result_45, _ = judge_sampling_args_and_headers("glm-4.5")
     assert result_45 == {"temperature": 0.6, "top_p": 0.95, "timeout": 300}
@@ -128,7 +128,7 @@ def test_judge_sampling_defaults_supports_multiple_names_per_defaults(
 
 def test_judge_sampling_override_temperature_non_reasoning(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.delenv("PRIME_TEAM_ID", raising=False)
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result, _ = judge_sampling_args_and_headers("gpt-4.1", temperature=0.123)
     assert result["temperature"] == 0.123
@@ -136,7 +136,7 @@ def test_judge_sampling_override_temperature_non_reasoning(monkeypatch: pytest.M
 
 def test_judge_sampling_reasoning_forces_temperature(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.delenv("PRIME_TEAM_ID", raising=False)
-    monkeypatch.delenv("MEDARC_INCLUDE_USAGE", raising=False)
+    monkeypatch.delenv("REDACTED_INCLUDE_USAGE", raising=False)
 
     result, _ = judge_sampling_args_and_headers("gpt-5.2", temperature=0.0, reasoning_effort="low")
     assert result["temperature"] == 1.0

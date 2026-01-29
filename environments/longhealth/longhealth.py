@@ -20,8 +20,8 @@ from typing import Any
 import verifiers as vf
 from datasets import Dataset
 from datasets.utils.logging import disable_progress_bar
-from medarc_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
-from medarc_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
+from REDACTED_verifiers.rewards.multiple_choice_accuracy import multiple_choice_accuracy
+from REDACTED_verifiers.utils.randomize_multiple_choice import randomize_multiple_choice
 
 disable_progress_bar()  # suppress datasets progress indicators
 
